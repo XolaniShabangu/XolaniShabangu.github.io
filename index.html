@@ -1,0 +1,1119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xolani Shabangu | Portfolio</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="img/logo bawgg-01.png" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(to right, #f4f7fa, #e8eff5);
+        color: #1c1c1c;
+        line-height: 1.7;
+      }
+
+      /* NAVBAR */
+      nav {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: #ffffff;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 80px;
+        z-index: 1000;
+        font-size: 18px;
+      }
+
+      nav .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #0077ff;
+      }
+
+      nav .logo img {
+        width: 55px;
+        height: 45px;
+        border-radius: 50%;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #0077ff;
+      }
+
+      /* SECTIONS */
+      section {
+        padding: 140px 100px;
+      }
+
+      section:nth-child(even) {
+        background: #ffffff;
+      }
+
+      section:nth-child(odd) {
+        background: #f9fbfd;
+      }
+
+      h2 {
+        font-size: 34px;
+        margin-bottom: 40px;
+        font-weight: 600;
+      }
+
+      /* SECTION HEADERS */
+      section h2 {
+        font-size: 38px;
+        font-weight: 700;
+        margin-bottom: 50px;
+        color: #1f3c88; /* deep soft blue */
+        position: relative;
+        display: inline-block;
+        letter-spacing: 0.5px;
+      }
+
+      /* Accent underline */
+      section h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -12px;
+        width: 70px;
+        height: 4px;
+        background: linear-gradient(90deg, #0077ff, #00c6ff);
+        border-radius: 4px;
+        transition: width 0.3s ease;
+      }
+
+      /* Subtle hover expansion */
+      section h2:hover::after {
+        width: 110px;
+      }
+
+      /* HERO */
+      .hero {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 100px;
+        flex-wrap: wrap;
+      }
+
+      .hero-text {
+        max-width: 600px;
+      }
+
+      .hero-text h1 {
+        font-size: 52px;
+        margin-bottom: 20px;
+      }
+
+      .hero-text span {
+        color: #0077ff;
+        font-size: 60px;
+      }
+
+      .hero-text p {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      .hero img {
+        width: 400px;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 28px;
+        background: #0077ff;
+        color: #fff;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        background: #005dd1;
+        transform: translateY(-3px);
+      }
+
+      /* HERO TEST */
+      /* 1. The Container - Holds everything together */
+      .hero-image-container {
+        position: relative;
+        display: inline-block;
+        padding: 6px; /* The thickness of the "track" */
+        border-radius: 25px;
+        overflow: hidden; /* This chops off the corners of the rotating square */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* 2. The Rotating "Snake" */
+      .hero-image-container::before {
+        content: "";
+        position: absolute;
+        /* Make this much larger than the image so it covers the corners as it rotates */
+        width: 150%;
+        height: 150%;
+        background: conic-gradient(
+          transparent,
+          rgba(0, 119, 255, 0.8),
+          #0077ff,
+          #00c6ff,
+          transparent 30%
+        );
+        animation: snake-rotate 4s linear infinite;
+        z-index: 1;
+      }
+
+      /* 3. The "Mask" - This covers the center so only the edge is visible */
+      .hero-image-container::after {
+        content: "";
+        position: absolute;
+        inset: 4px; /* This controls how thick the border looks */
+        background: #f4f7fa; /* Match this to your section background color */
+        border-radius: 22px;
+        z-index: 1;
+      }
+
+      /* 4. The Image - Sits on the very top */
+      .hero-image-container img {
+        position: relative;
+        width: 400px;
+        border-radius: 20px;
+        z-index: 2; /* Keeps image above the rotating light */
+        display: block;
+      }
+
+      /* 5. Rotation Animation */
+      @keyframes snake-rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Mobile fix for image size */
+      @media (max-width: 700px) {
+        .hero-image-container img {
+          width: 280px;
+        }
+      }
+
+      /* PARALLAX STRIP */
+      .parallax-strip {
+        position: relative;
+        height: 50px; /* thin section */
+        background-image: url("img/grad.jpeg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Soft overlay */
+      .parallax-strip::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgb(0, 81, 255);
+      }
+
+      /* Optional centered text */
+      .parallax-content {
+        position: relative;
+        color: #ffffff;
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-align: center;
+      }
+
+      /* COUNTERS */
+      .counters {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .counter-box {
+        flex: 1;
+        min-width: 250px;
+        background: #ffffff;
+        padding: 50px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+      }
+
+      .counter-box h3 {
+        font-size: 44px;
+        color: #0077ff;
+      }
+
+      .counter-box p {
+        font-size: 18px;
+      }
+
+      /* EDUCATION SECTION */
+      #education {
+        position: relative;
+      }
+
+      /* Timeline container */
+      .education-timeline {
+        position: relative;
+        margin-top: 50px;
+        padding-left: 40px;
+      }
+
+      /* Vertical line */
+      .education-timeline::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(to bottom, #0077ff, #00c6ff);
+        border-radius: 5px;
+      }
+
+      /* Card */
+      .education-card {
+        position: relative;
+        background: #ffffff;
+        padding: 35px 35px 35px 40px;
+        border-radius: 15px;
+        margin-bottom: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+      }
+
+      /* Dot on timeline */
+      .education-card::before {
+        content: "";
+        position: absolute;
+        left: -32px;
+        top: 35px;
+        width: 18px;
+        height: 18px;
+        background: #ffffff;
+        border: 4px solid #0077ff;
+        border-radius: 50%;
+      }
+
+      /* Hover effect */
+      .education-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(0, 119, 255, 0.15);
+      }
+
+      /* Degree Title */
+      .education-card h3 {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      /* Institution */
+      .education-card p {
+        font-size: 17px;
+        color: #555;
+      }
+
+      /* Year Badge */
+      .education-year {
+        display: inline-block;
+        margin-bottom: 12px;
+        padding: 6px 14px;
+        font-size: 14px;
+        font-weight: 600;
+        background: #f0f6ff;
+        color: #0077ff;
+        border-radius: 20px;
+      }
+
+      .education-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px; /* Increased gap between text and images */
+        overflow: hidden; /* Keeps everything tidy */
+      }
+
+      /* Ensure text doesn't shrink too much */
+      .education-info {
+        flex: 1;
+      }
+
+      .education-images {
+        display: flex;
+        gap: 15px;
+        flex-shrink: 0;
+        padding: 10px;
+        background: #f8fbff; /* Very light tint to define the image area */
+        border-radius: 15px;
+      }
+
+      /* Individual Placeholders */
+      .img-placeholder {
+        width: 80px;
+        height: 80px;
+        background: #f0f2f5;
+        border: 2px dashed #cbd5e0;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+
+      /* Subtle hover for placeholders */
+      .education-card:hover .img-placeholder {
+        border-color: #0077ff;
+        background: #f0f6ff;
+      }
+
+      /* Responsive fix: Stack on small screens */
+      @media (max-width: 768px) {
+        .education-card {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      /* Container for the photos */
+      .education-images {
+        display: flex;
+        gap: 12px; /* Perfect spacing between photos */
+        flex-shrink: 0; /* Prevents the images from squishing if the text is long */
+      }
+
+      /* Individual Photo Styling */
+      .edu-photo {
+        width: 140px; /* Increased from 90px */
+        height: 140px; /* Increased from 90px */
+        object-fit: cover;
+        border-radius: 10px;
+        border: 3px solid #ffffff;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+      }
+
+      /* Interaction effect */
+      .edu-photo:hover {
+        transform: scale(1.08) translateY(-5px);
+        border-color: #0077ff;
+        box-shadow: 0 12px 25px rgba(0, 119, 255, 0.2);
+        z-index: 10;
+      }
+
+      /* Mobile Tweak: Stack vertically when screen is narrow */
+      @media (max-width: 900px) {
+        .education-card {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .education-images {
+          width: 100%;
+          justify-content: space-around;
+          padding: 0;
+          background: transparent;
+        }
+
+        .edu-photo {
+          width: 30%; /* Photos will scale relative to screen width on mobile */
+          height: auto;
+          aspect-ratio: 1 / 1;
+        }
+      }
+
+      /* Container for the group */
+      .education-images {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; /* Keeps it to the far right */
+      }
+
+      .progress-wrapper {
+        position: relative;
+        display: flex;
+        gap: 15px;
+        padding: 10px;
+      }
+
+      /* Glassy Placeholders */
+      .img-placeholder {
+        width: 130px;
+        height: 130px;
+        background: rgba(0, 119, 255, 0.03); /* Very faint tint */
+        border: 2px dashed #cbd5e0;
+        border-radius: 15px;
+        transition: all 0.4s ease;
+      }
+
+      /* The "In Progress" Floating Badge */
+      .status-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-5deg);
+        background: #0077ff;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 10px 20px rgba(0, 119, 255, 0.3);
+        pointer-events: none; /* Allows hover through to placeholders */
+        animation: pulse-glow 2s infinite ease-in-out;
+        white-space: nowrap;
+        z-index: 5;
+      }
+
+      /* Pulsating Animation */
+      @keyframes pulse-glow {
+        0% {
+          transform: translate(-50%, -50%) rotate(-5deg) scale(1);
+          box-shadow: 0 0 0 0 rgba(0, 119, 255, 0.4);
+        }
+        70% {
+          transform: translate(-50%, -50%) rotate(-5deg) scale(1.05);
+          box-shadow: 0 0 0 15px rgba(0, 119, 255, 0);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(-5deg) scale(1);
+          box-shadow: 0 0 0 0 rgba(0, 119, 255, 0);
+        }
+      }
+
+      /* Hover Effect on the whole group */
+      .education-card:hover .img-placeholder {
+        border-color: #0077ff;
+        background: rgba(0, 119, 255, 0.08);
+        transform: scale(0.98); /* Slight shrink to highlight the badge */
+      }
+
+      /* Mobile Responsiveness */
+      @media (max-width: 900px) {
+        .education-images {
+          width: 100%;
+          justify-content: center;
+          margin-top: 20px;
+        }
+        .img-placeholder {
+          width: 90px;
+          height: 90px;
+        }
+      }
+
+      /* PROJECTS - 3 GRID */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .project-card {
+        background: #ffffff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+        transition: 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .project-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .project-content {
+        padding: 25px;
+      }
+
+      .project-content h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      .project-content p {
+        padding-bottom: 10px;
+      }
+
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 15px;
+      }
+
+      .tech-stack span {
+        background: #f0f2f5;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #333;
+      }
+
+      /* SKILLS */
+      .skills-category {
+        margin-bottom: 40px;
+      }
+
+      .skills-category h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        color: #0077ff;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+      }
+
+      .skill-card {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: 0.3s;
+      }
+
+      .skill-card i {
+        font-size: 28px;
+        margin-bottom: 10px;
+        color: #0077ff;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-5px);
+      }
+
+      /* CONTACT SECTION */
+      #contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .business-card {
+        margin-top: 40px;
+        background: #ffffff;
+        width: 100%;
+        max-width: 750px;
+        padding: 50px 60px;
+        border-radius: 18px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e6edf5;
+        position: relative;
+        transition: 0.3s ease;
+      }
+
+      .business-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 50px rgba(0, 119, 255, 0.15);
+      }
+
+      /* Top Name Section */
+      .card-header h3 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .card-header span {
+        font-size: 18px;
+        color: #0077ff;
+        font-weight: 500;
+      }
+
+      /* Divider */
+      .card-divider {
+        width: 60px;
+        height: 3px;
+        background: #0077ff;
+        margin: 25px auto 35px auto;
+        border-radius: 3px;
+      }
+
+      /* Contact Info Layout */
+      .card-contacts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 40px;
+        text-align: left;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 17px;
+      }
+
+      .contact-item i {
+        font-size: 20px;
+        color: #0077ff;
+        width: 25px;
+      }
+
+      .contact-item a {
+        text-decoration: none;
+        color: #333;
+        transition: 0.3s;
+      }
+
+      .contact-item a:hover {
+        color: #0077ff;
+      }
+
+      /* Responsive */
+      @media (max-width: 700px) {
+        .business-card {
+          padding: 40px 30px;
+        }
+
+        .card-contacts {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 1000px) {
+        .projects-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .parallax-strip {
+          background-attachment: scroll;
+        }
+      }
+
+      @media (max-width: 700px) {
+        nav {
+          padding: 18px 30px;
+        }
+        section {
+          padding: 140px 30px;
+        }
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="img/logo bawgg-01.png" />
+        Xolani Shabangu
+      </div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section id="home" class="hero">
+      <div class="worm-track"></div>
+      <div class="hero-text">
+        <h1>Hello👋🏼, I'm <span>Xolani</span></h1>
+        <p>
+          Graduate Software Developer with strong foundations in .NET
+          development, full-stack system architecture, SQL databases and Android
+          applications.
+        </p>
+        <a href="img/Xolani  Shabangu CV e.pdf" class="btn" download
+          >Download CV</a
+        >
+      </div>
+      <div class="hero-image-container">
+        <img src="img/Profile.jpeg" alt="Xolani Shabangu Profile" />
+      </div>
+    </section>
+
+    <section class="parallax-strip">
+      <div class="parallax-content">
+        Building Scalable Systems. Designing Impactful Solutions.
+      </div>
+    </section>
+
+    <section id="stats">
+      <h2>Professional Snapshot</h2>
+      <div class="counters">
+        <div class="counter-box">
+          <h3>4</h3>
+          <p>Major Systems Built</p>
+        </div>
+        <div class="counter-box">
+          <h3>12+</h3>
+          <p>Technologies Mastered</p>
+        </div>
+        <div class="counter-box">
+          <h3>3</h3>
+          <p>Certifications Earned</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="education">
+      <h2>Education</h2>
+
+      <div class="education-timeline">
+        <div class="education-card">
+          <div class="education-year">2025</div>
+          <h3>Advanced Diploma in ICT (NQF7)</h3>
+          <p>Durban University of Technology</p>
+        </div>
+
+        <div class="education-card">
+          <div class="education-year">2024</div>
+          <h3>Diploma in ICT: Applications Development</h3>
+          <p>Durban University of Technology</p>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="education-timeline">
+        <div class="education-card">
+          <div class="education-info">
+            <div class="education-year">2025</div>
+            <h3>Advanced Diploma in ICT (NQF7)</h3>
+            <p>Durban University of Technology</p>
+          </div>
+
+          <div class="education-images">
+            <div class="progress-wrapper">
+              <div class="img-placeholder"></div>
+              <div class="img-placeholder"></div>
+              <div class="img-placeholder"></div>
+              <div class="status-overlay">Coming Soon!</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="education-card">
+          <div class="education-info">
+            <div class="education-year">2024</div>
+            <h3>Diploma in ICT: Applications Development</h3>
+            <p>Durban University of Technology</p>
+          </div>
+
+          <div class="education-images">
+            <img src="img/grad1.jpg" alt="Photo 1" class="edu-photo" />
+            <img src="img/grad2.jpg" alt="Photo 2" class="edu-photo" />
+            <img src="img/grad3.jpg" alt="Photo 3" class="edu-photo" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="projects-grid">
+        <!-- 1. Fountain Court -->
+        <div class="project-card">
+          <img src="img/fountaincourt.png" alt="Fountain Court Project Image" />
+          <div class="project-content">
+            <h3>Fountain Court Residents</h3>
+
+            <div class="tech-stack">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Bootstrap</span>
+              <span>ASP.NET MVC 5</span>
+              <span>C#</span>
+              <span>SQL Server</span>
+              <span>Entity Framework</span>
+              <span>Azure OCR</span>
+              <span>PayFast</span>
+              <span>MailKit SMTP</span>
+            </div>
+
+            <p>
+              A full rental and tenant management platform that streamlines
+              property operations for landlords, tenants, and maintenance teams.
+            </p>
+
+            <a
+              href="https://github.com/XolaniShabangu/FountainCourt-Apartments"
+              class="btn"
+              target="_blank"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
+
+        <!-- 2. SafeDUT -->
+        <div class="project-card">
+          <img src="img/safeDUT.jpg" alt="SafeDUT Project Image" />
+          <div class="project-content">
+            <h3>SafeDUT – Smart Security Alert System</h3>
+
+            <div class="tech-stack">
+              <span>Android</span>
+              <span>Java</span>
+              <span>Kotlin</span>
+              <span>Firebase</span>
+              <span>Google Maps API</span>
+              <span>NLP Chatbot</span>
+            </div>
+
+            <p>
+              A campus safety mobile application built for DUT. SafeDUT enables
+              real-time emergency alerts, location-based incident reporting,
+              enhancing response time and improves situational awareness.
+            </p>
+
+            <a
+              href="https://github.com/XolaniShabangu/SafeDUT"
+              class="btn"
+              target="_blank"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
+
+        <!-- 3. Northmed Clinic -->
+        <div class="project-card">
+          <img src="img/northmed.png" alt="Northmed Clinic Project Image" />
+          <div class="project-content">
+            <h3>Northmed Clinic Inventory System</h3>
+
+            <div class="tech-stack">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>C#</span>
+              <span>SQL Server</span>
+              <span>Azure</span>
+            </div>
+
+            <p>
+              A medical inventory optimization system designed for pharmacists
+              and suppliers. The application minimizes procurement costs while
+              maintaining optimal medicine stock levels.
+            </p>
+
+            <a
+              href="https://github.com/sefehle/Inventory-management-system"
+              class="btn"
+              target="_blank"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
+
+        <!-- 4. Book Buffet -->
+        <div class="project-card">
+          <img src="img/bookbuffet.png" alt="Book Buffet Project Image" />
+          <div class="project-content">
+            <h3>The Book Buffet System</h3>
+
+            <div class="tech-stack">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>C#</span>
+              <span>Azure OCR</span>
+              <span>Azure Text-to-Speech</span>
+              <span>SQL Database</span>
+              <span>Facebook API</span>
+            </div>
+
+            <p>
+              A digital bookstore platform that combines eCommerce functionality
+              with content creation opportunities. Users can purchase books
+              while creators contribute eBooks and audiobooks. Azure AI services
+              power text recognition and text-to-speech conversion for enhanced
+              accessibility.
+            </p>
+
+            <a
+              href="https://github.com/XolaniShabangu/Tickets-Sales-AND-Jobs-Application"
+              class="btn"
+              target="_blank"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+
+      <div class="skills-category">
+        <h3>Languages</h3>
+        <div class="skills-grid">
+          <div class="skill-card"><i class="fab fa-python"></i> Python</div>
+          <div class="skill-card"><i class="fab fa-js"></i> JavaScript</div>
+          <div class="skill-card"><i class="fas fa-code"></i> C#</div>
+          <div class="skill-card"><i class="fas fa-database"></i> SQL</div>
+          <div class="skill-card"><i class="fab fa-html5"></i> HTML5</div>
+          <div class="skill-card"><i class="fab fa-css3-alt"></i> CSS3</div>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <h3>Frameworks</h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i class="fas fa-layer-group"></i> ASP.NET
+          </div>
+          <div class="skill-card"><i class="fas fa-flask"></i> Flask</div>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <h3>Tools & Platforms</h3>
+        <div class="skills-grid">
+          <div class="skill-card"><i class="fab fa-git-alt"></i> Git</div>
+
+          <div class="skill-card">
+            <i class="fas fa-laptop-code"></i> Visual Studio Code
+          </div>
+
+          <div class="skill-card">
+            <i class="fas fa-mobile-alt"></i> Android Studio
+          </div>
+
+          <div class="skill-card"><i class="fas fa-cloud"></i> Firebase</div>
+
+          <div class="skill-card"><i class="fas fa-server"></i> SQL Server</div>
+
+          <div class="skill-card"><i class="fas fa-database"></i> MySQL</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <div class="business-card">
+        <div class="card-header">
+          <h3>Xolani Shabangu</h3>
+          <span>Graduate Software Developer</span>
+        </div>
+
+        <div class="card-divider"></div>
+
+        <div class="card-contacts">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:xolanishabangu97@gmail.com">
+              xolanishabangu97@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+27796159156"> +27 79 615 9156 </a>
+          </div>
+
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <a
+              href="https://linkedin.com/in/xolani-s-27b897224/"
+              target="_blank"
+            >
+              linkedin.com/in/XolaniShabangu
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/XolaniShabangu" target="_blank">
+              github.com/XolaniShabangu
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener(
+        "contextmenu",
+        function (e) {
+          if (e.target.tagName === "IMG") {
+            e.preventDefault();
+          }
+        },
+        false,
+      );
+    </script>
+  </body>
+</html>
