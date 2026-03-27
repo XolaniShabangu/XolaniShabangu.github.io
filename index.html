@@ -1,77 +1,115 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Xolani Shabangu | Portfolio</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
     <link rel="icon" type="image/x-icon" href="img/logo bawgg-01.png" />
 
     <style>
       * {
         margin: 0;
+
         padding: 0;
+
         box-sizing: border-box;
+
         scroll-behavior: smooth;
+
         font-family: "Poppins", sans-serif;
       }
 
       body {
         background: linear-gradient(to right, #f4f7fa, #e8eff5);
+
         color: #1c1c1c;
+
         line-height: 1.7;
-        zoom: 0.8;
+      }
+
+      body {
+        zoom: 0.72; /* Scales to 72% — matches 90% browser zoom appearance */
       }
 
       /* NAVBAR */
+
       nav {
         position: fixed;
+
         width: 100%;
+
         top: 0;
+
         left: 0;
+
         background: #ffffff;
+
         box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+
         display: flex;
+
         justify-content: space-between;
+
         align-items: center;
+
         padding: 18px 80px;
+
         z-index: 1000;
+
         font-size: 18px;
       }
 
       nav .logo {
         display: flex;
+
         align-items: center;
+
         gap: 12px;
+
         font-weight: 600;
+
         font-size: 20px;
+
         color: #0077ff;
       }
 
       nav .logo img {
         width: 55px;
+
         height: 45px;
+
         border-radius: 50%;
       }
 
       nav ul {
         list-style: none;
+
         display: flex;
+
         gap: 30px;
       }
 
       nav ul li a {
         text-decoration: none;
+
         color: #333;
+
         font-weight: 500;
+
         transition: 0.3s;
       }
 
@@ -80,6 +118,7 @@
       }
 
       /* SECTIONS */
+
       section {
         padding: 140px 100px;
       }
@@ -94,65 +133,173 @@
 
       h2 {
         font-size: 34px;
+
         margin-bottom: 40px;
+
         font-weight: 600;
       }
 
       /* SECTION HEADERS */
+
       section h2 {
         font-size: 38px;
+
         font-weight: 700;
+
         margin-bottom: 50px;
+
         color: #1f3c88; /* deep soft blue */
+
         position: relative;
+
         display: inline-block;
+
         letter-spacing: 0.5px;
       }
 
       /* Accent underline */
+
       section h2::after {
         content: "";
+
         position: absolute;
+
         left: 0;
+
         bottom: -12px;
+
         width: 70px;
+
         height: 4px;
+
         background: linear-gradient(90deg, #0077ff, #00c6ff);
+
         border-radius: 4px;
+
         transition: width 0.3s ease;
       }
 
       /* Subtle hover expansion */
+
       section h2:hover::after {
         width: 110px;
       }
 
       /* HERO */
+
       .hero {
+        padding: 160px 0 120px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .worm-track {
+        display: none;
+      }
+
+      .hero-inner {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
-        gap: 100px;
+        gap: 80px;
         flex-wrap: wrap;
+        max-width: 1700px;
+
+        padding-left: 200px;
       }
 
       .hero-text {
-        max-width: 600px;
+        max-width: 540px;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        background: #f0f6ff;
+        color: #0077ff;
+        border: 1px solid #d0e8ff;
+        padding: 7px 16px;
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 22px;
+        letter-spacing: 0.3px;
+      }
+
+      .hero-badge::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        background: #0077ff;
+        border-radius: 50%;
+        flex-shrink: 0;
+        animation: pulse-dot 1.6s ease-in-out infinite;
+      }
+
+      @keyframes pulse-dot {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.4;
+          transform: scale(1.5);
+        }
       }
 
       .hero-text h1 {
-        font-size: 52px;
-        margin-bottom: 20px;
+        font-size: 56px;
+        margin-bottom: 18px;
+        line-height: 1.15;
       }
 
       .hero-text span {
         color: #0077ff;
-        font-size: 60px;
+        font-size: 64px;
       }
 
       .hero-text p {
-        font-size: 18px;
-        margin-bottom: 30px;
+        font-size: 17px;
+        color: #555;
+        margin-bottom: 18px;
+        line-height: 1.85;
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      .hero-social-links {
+        display: flex;
+        gap: 10px;
+      }
+
+      .hero-social-link {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #f0f6ff;
+        color: #0077ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 17px;
+        border: 1px solid #d0e8ff;
+        transition: 0.25s;
+      }
+
+      .hero-social-link:hover {
+        background: #0077ff;
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 119, 255, 0.25);
       }
 
       .hero img {
@@ -161,42 +308,166 @@
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
       }
 
+      /* Image wrapper with floating badges */
+      .hero-image-wrapper {
+        position: relative;
+        flex-shrink: 0;
+      }
+
+      .hero-image-wrapper::before {
+        content: "";
+        position: absolute;
+        width: 125%;
+        height: 125%;
+        top: -12%;
+        left: -12%;
+        background: radial-gradient(
+          circle,
+          rgba(0, 119, 255, 0.07) 0%,
+          transparent 65%
+        );
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .hero-image-container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-float-badge {
+        position: absolute;
+        background: #ffffff;
+        border-radius: 50px;
+        padding: 9px 18px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #1c1c1c;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+        white-space: nowrap;
+        z-index: 3;
+        border: 1px solid #eef0f5;
+      }
+
+      .float-badge-1 {
+        top: -18px;
+        right: 30px;
+        animation: fb1 3.2s ease-in-out infinite;
+      }
+
+      .float-badge-2 {
+        top: 50%;
+        right: -20px;
+        transform: translateY(-50%);
+        animation: fb2 3.8s ease-in-out infinite;
+      }
+
+      .float-badge-3 {
+        bottom: -18px;
+        left: 30px;
+        animation: fb1 4.3s ease-in-out infinite;
+      }
+
+      @keyframes fb1 {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes fb2 {
+        0%,
+        100% {
+          transform: translateY(calc(-50% - 8px));
+        }
+        50% {
+          transform: translateY(calc(-50% + 8px));
+        }
+      }
+
+      @media (max-width: 700px) {
+        .hero {
+          padding: 140px 0 80px;
+        }
+        .hero-inner {
+          flex-direction: column;
+          text-align: center;
+          padding: 0 30px;
+        }
+        .hero-float-badge {
+          display: none;
+        }
+        .hero-image-wrapper::before {
+          display: none;
+        }
+        .hero-actions {
+          justify-content: center;
+        }
+      }
+
       .btn {
         display: inline-block;
+
         padding: 14px 28px;
+
         background: #0077ff;
+
         color: #fff;
+
         border-radius: 30px;
+
         text-decoration: none;
+
         font-weight: 500;
+
         transition: 0.3s;
       }
 
       .btn:hover {
         background: #005dd1;
+
         transform: translateY(-3px);
       }
 
       /* HERO TEST */
+
       /* 1. The Container - Holds everything together */
+
       .hero-image-container {
         position: relative;
+
         display: inline-block;
+
         padding: 6px; /* The thickness of the "track" */
+
         border-radius: 25px;
+
         overflow: hidden; /* This chops off the corners of the rotating square */
+
         display: flex;
+
         justify-content: center;
+
         align-items: center;
       }
 
       /* 2. The Rotating "Snake" */
+
       .hero-image-container::before {
         content: "";
+
         position: absolute;
+
         /* Make this much larger than the image so it covers the corners as it rotates */
+
         width: 150%;
+
         height: 150%;
+
         background: conic-gradient(
           transparent,
           rgba(0, 119, 255, 0.8),
@@ -204,40 +475,56 @@
           #00c6ff,
           transparent 30%
         );
+
         animation: snake-rotate 4s linear infinite;
+
         z-index: 1;
       }
 
       /* 3. The "Mask" - This covers the center so only the edge is visible */
+
       .hero-image-container::after {
         content: "";
+
         position: absolute;
+
         inset: 4px; /* This controls how thick the border looks */
+
         background: #f4f7fa; /* Match this to your section background color */
+
         border-radius: 22px;
+
         z-index: 1;
       }
 
       /* 4. The Image - Sits on the very top */
+
       .hero-image-container img {
         position: relative;
+
         width: 400px;
+
         border-radius: 20px;
+
         z-index: 2; /* Keeps image above the rotating light */
+
         display: block;
       }
 
       /* 5. Rotation Animation */
+
       @keyframes snake-rotate {
         from {
           transform: rotate(0deg);
         }
+
         to {
           transform: rotate(360deg);
         }
       }
 
       /* Mobile fix for image size */
+
       @media (max-width: 700px) {
         .hero-image-container img {
           width: 280px;
@@ -245,57 +532,88 @@
       }
 
       /* PARALLAX STRIP */
+
       .parallax-strip {
         position: relative;
+
         height: 50px; /* thin section */
+
         background-image: url("img/grad.jpeg");
+
         background-attachment: fixed;
+
         background-position: center;
+
         background-repeat: no-repeat;
+
         background-size: cover;
+
         display: flex;
+
         align-items: center;
+
         justify-content: center;
       }
 
       /* Soft overlay */
+
       .parallax-strip::before {
         content: "";
+
         position: absolute;
+
         inset: 0;
+
         background: rgb(0, 81, 255);
       }
 
       /* Optional centered text */
+
       .parallax-content {
         position: relative;
+
         color: #ffffff;
+
         font-size: 22px;
+
         font-weight: 500;
+
         letter-spacing: 1px;
+
         text-align: center;
       }
 
       /* COUNTERS */
+
       .counters {
         display: flex;
+
         justify-content: space-between;
+
         gap: 30px;
+
         flex-wrap: wrap;
       }
 
       .counter-box {
         flex: 1;
+
         min-width: 250px;
+
         background: #ffffff;
+
         padding: 50px;
+
         border-radius: 15px;
+
         text-align: center;
+
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
       }
 
       .counter-box h3 {
         font-size: 44px;
+
         color: #0077ff;
       }
 
@@ -304,272 +622,408 @@
       }
 
       /* EDUCATION SECTION */
+
       #education {
         position: relative;
       }
 
       /* Timeline container */
+
       .education-timeline {
         position: relative;
+
         margin-top: 50px;
+
         padding-left: 40px;
       }
 
       /* Vertical line */
+
       .education-timeline::before {
         content: "";
+
         position: absolute;
+
         left: 12px;
+
         top: 0;
+
         width: 4px;
+
         height: 100%;
+
         background: linear-gradient(to bottom, #0077ff, #00c6ff);
+
         border-radius: 5px;
       }
 
       /* Card */
+
       .education-card {
         position: relative;
+
         background: #ffffff;
+
         padding: 35px 35px 35px 40px;
+
         border-radius: 15px;
+
         margin-bottom: 40px;
+
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
         transition: all 0.3s ease;
       }
 
       /* Dot on timeline */
+
       .education-card::before {
         content: "";
+
         position: absolute;
+
         left: -32px;
+
         top: 35px;
+
         width: 18px;
+
         height: 18px;
+
         background: #ffffff;
+
         border: 4px solid #0077ff;
+
         border-radius: 50%;
       }
 
       /* Hover effect */
+
       .education-card:hover {
         transform: translateY(-6px);
+
         box-shadow: 0 18px 40px rgba(0, 119, 255, 0.15);
       }
 
       /* Degree Title */
+
       .education-card h3 {
         font-size: 22px;
+
         font-weight: 600;
+
         margin-bottom: 8px;
       }
 
       /* Institution */
+
       .education-card p {
         font-size: 17px;
+
         color: #555;
       }
 
       /* Year Badge */
+
       .education-year {
         display: inline-block;
+
         margin-bottom: 12px;
+
         padding: 6px 14px;
+
         font-size: 14px;
+
         font-weight: 600;
+
         background: #f0f6ff;
+
         color: #0077ff;
+
         border-radius: 20px;
       }
 
       .education-card {
         display: flex;
+
         justify-content: space-between;
+
         align-items: center;
+
         gap: 30px; /* Increased gap between text and images */
+
         overflow: hidden; /* Keeps everything tidy */
       }
 
       /* Ensure text doesn't shrink too much */
+
       .education-info {
         flex: 1;
       }
 
       .education-images {
         display: flex;
+
         gap: 15px;
+
         flex-shrink: 0;
+
         padding: 10px;
+
         background: #f8fbff; /* Very light tint to define the image area */
+
         border-radius: 15px;
       }
 
       /* Individual Placeholders */
+
       .img-placeholder {
         width: 80px;
+
         height: 80px;
+
         background: #f0f2f5;
+
         border: 2px dashed #cbd5e0;
+
         border-radius: 10px;
+
         transition: all 0.3s ease;
       }
 
       /* Subtle hover for placeholders */
+
       .education-card:hover .img-placeholder {
         border-color: #0077ff;
+
         background: #f0f6ff;
       }
 
       /* Responsive fix: Stack on small screens */
+
       @media (max-width: 768px) {
         .education-card {
           flex-direction: column;
+
           align-items: flex-start;
         }
       }
 
       /* Container for the photos */
+
       .education-images {
         display: flex;
+
         gap: 12px; /* Perfect spacing between photos */
+
         flex-shrink: 0; /* Prevents the images from squishing if the text is long */
       }
 
       /* Individual Photo Styling */
+
       .edu-photo {
         width: 140px; /* Increased from 90px */
+
         height: 140px; /* Increased from 90px */
+
         object-fit: cover;
+
         border-radius: 10px;
+
         border: 3px solid #ffffff;
+
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
         cursor: pointer;
       }
 
       /* Interaction effect */
+
       .edu-photo:hover {
         transform: scale(1.08) translateY(-5px);
+
         border-color: #0077ff;
+
         box-shadow: 0 12px 25px rgba(0, 119, 255, 0.2);
+
         z-index: 10;
       }
 
       /* Mobile Tweak: Stack vertically when screen is narrow */
+
       @media (max-width: 900px) {
         .education-card {
           flex-direction: column;
+
           align-items: flex-start;
         }
 
         .education-images {
           width: 100%;
+
           justify-content: space-around;
+
           padding: 0;
+
           background: transparent;
         }
 
         .edu-photo {
           width: 30%; /* Photos will scale relative to screen width on mobile */
+
           height: auto;
+
           aspect-ratio: 1 / 1;
         }
       }
 
       /* Container for the group */
+
       .education-images {
         position: relative;
+
         display: flex;
+
         align-items: center;
+
         justify-content: flex-end; /* Keeps it to the far right */
       }
 
       .progress-wrapper {
         position: relative;
+
         display: flex;
+
         gap: 15px;
+
         padding: 10px;
       }
 
       /* Glassy Placeholders */
+
       .img-placeholder {
         width: 130px;
+
         height: 130px;
+
         background: rgba(0, 119, 255, 0.03); /* Very faint tint */
+
         border: 2px dashed #cbd5e0;
+
         border-radius: 15px;
+
         transition: all 0.4s ease;
       }
 
       /* The "In Progress" Floating Badge */
+
       .status-overlay {
         position: absolute;
+
         top: 50%;
+
         left: 50%;
+
         transform: translate(-50%, -50%) rotate(-5deg);
+
         background: #0077ff;
+
         color: white;
+
         padding: 8px 20px;
+
         border-radius: 50px;
+
         font-weight: 700;
+
         font-size: 14px;
+
         text-transform: uppercase;
+
         letter-spacing: 1px;
+
         box-shadow: 0 10px 20px rgba(0, 119, 255, 0.3);
+
         pointer-events: none; /* Allows hover through to placeholders */
+
         animation: pulse-glow 2s infinite ease-in-out;
+
         white-space: nowrap;
+
         z-index: 5;
       }
 
       /* Pulsating Animation */
+
       @keyframes pulse-glow {
         0% {
           transform: translate(-50%, -50%) rotate(-5deg) scale(1);
+
           box-shadow: 0 0 0 0 rgba(0, 119, 255, 0.4);
         }
+
         70% {
           transform: translate(-50%, -50%) rotate(-5deg) scale(1.05);
+
           box-shadow: 0 0 0 15px rgba(0, 119, 255, 0);
         }
+
         100% {
           transform: translate(-50%, -50%) rotate(-5deg) scale(1);
+
           box-shadow: 0 0 0 0 rgba(0, 119, 255, 0);
         }
       }
 
       /* Hover Effect on the whole group */
+
       .education-card:hover .img-placeholder {
         border-color: #0077ff;
+
         background: rgba(0, 119, 255, 0.08);
+
         transform: scale(0.98); /* Slight shrink to highlight the badge */
       }
 
       /* Mobile Responsiveness */
+
       @media (max-width: 900px) {
         .education-images {
           width: 100%;
+
           justify-content: center;
+
           margin-top: 20px;
         }
+
         .img-placeholder {
           width: 90px;
+
           height: 90px;
         }
       }
 
       /* PROJECTS - 3 GRID */
+
       .projects-grid {
         display: grid;
+
         grid-template-columns: repeat(3, 1fr);
+
         gap: 30px;
       }
 
       .project-card {
         background: #ffffff;
+
         border-radius: 15px;
+
         overflow: hidden;
+
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
         transition: 0.3s;
       }
 
@@ -579,7 +1033,9 @@
 
       .project-card img {
         width: 100%;
+
         height: 300px;
+
         object-fit: cover;
       }
 
@@ -589,6 +1045,7 @@
 
       .project-content h3 {
         font-size: 20px;
+
         margin-bottom: 15px;
       }
 
@@ -598,49 +1055,69 @@
 
       .tech-stack {
         display: flex;
+
         flex-wrap: wrap;
+
         gap: 8px;
+
         margin-bottom: 15px;
       }
 
       .tech-stack span {
         background: #f0f2f5;
+
         padding: 6px 10px;
+
         border-radius: 20px;
+
         font-size: 12px;
+
         font-weight: 500;
+
         color: #333;
       }
 
       /* SKILLS */
+
       .skills-category {
         margin-bottom: 40px;
       }
 
       .skills-category h3 {
         font-size: 22px;
+
         margin-bottom: 20px;
+
         color: #0077ff;
       }
 
       .skills-grid {
         display: grid;
+
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
         gap: 20px;
       }
 
       .skill-card {
         background: #ffffff;
+
         padding: 20px;
+
         border-radius: 12px;
+
         text-align: center;
+
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
         transition: 0.3s;
       }
 
       .skill-card i {
         font-size: 28px;
+
         margin-bottom: 10px;
+
         color: #0077ff;
       }
 
@@ -649,77 +1126,112 @@
       }
 
       /* CONTACT SECTION */
+
       #contact {
         display: flex;
+
         flex-direction: column;
+
         align-items: center;
+
         text-align: center;
       }
 
       .business-card {
         margin-top: 40px;
+
         background: #ffffff;
+
         width: 100%;
+
         max-width: 750px;
+
         padding: 50px 60px;
+
         border-radius: 18px;
+
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+
         border: 1px solid #e6edf5;
+
         position: relative;
+
         transition: 0.3s ease;
       }
 
       .business-card:hover {
         transform: translateY(-6px);
+
         box-shadow: 0 20px 50px rgba(0, 119, 255, 0.15);
       }
 
       /* Top Name Section */
+
       .card-header h3 {
         font-size: 28px;
+
         font-weight: 600;
+
         margin-bottom: 8px;
       }
 
       .card-header span {
         font-size: 18px;
+
         color: #0077ff;
+
         font-weight: 500;
       }
 
       /* Divider */
+
       .card-divider {
         width: 60px;
+
         height: 3px;
+
         background: #0077ff;
+
         margin: 25px auto 35px auto;
+
         border-radius: 3px;
       }
 
       /* Contact Info Layout */
+
       .card-contacts {
         display: grid;
+
         grid-template-columns: 1fr 1fr;
+
         gap: 25px 40px;
+
         text-align: left;
       }
 
       .contact-item {
         display: flex;
+
         align-items: center;
+
         gap: 15px;
+
         font-size: 17px;
       }
 
       .contact-item i {
         font-size: 20px;
+
         color: #0077ff;
+
         width: 25px;
       }
 
       .contact-item a {
         text-decoration: none;
+
         color: #333;
+
         transition: 0.3s;
       }
 
@@ -728,6 +1240,7 @@
       }
 
       /* Responsive */
+
       @media (max-width: 700px) {
         .business-card {
           padding: 40px 30px;
@@ -739,6 +1252,7 @@
       }
 
       /* RESPONSIVE */
+
       @media (max-width: 1000px) {
         .projects-grid {
           grid-template-columns: repeat(2, 1fr);
@@ -755,50 +1269,795 @@
         nav {
           padding: 18px 30px;
         }
+
         section {
           padding: 140px 30px;
         }
+
         .projects-grid {
           grid-template-columns: 1fr;
         }
-        .hero {
-          flex-direction: column;
-          text-align: center;
+      }
+
+      /* ===== TYPEWRITER ===== */
+      .typewriter-line {
+        display: block;
+        font-size: 20px;
+        color: #0077ff;
+        font-weight: 500;
+        margin-top: -10px;
+        margin-bottom: 28px;
+        min-height: 32px;
+      }
+      .typewriter-cursor {
+        display: inline-block;
+        width: 2px;
+        height: 1.1em;
+        background: #0077ff;
+        margin-left: 3px;
+        vertical-align: middle;
+        animation: blink 0.7s steps(1) infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
         }
+        50% {
+          opacity: 0;
+        }
+      }
+
+      /* ===== SKILL BARS ===== */
+      .skill-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .skill-name {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+      .skill-bar-wrapper {
+        width: 100%;
+      }
+      .skill-bar-track {
+        background: #e8eff5;
+        border-radius: 10px;
+        height: 5px;
+        overflow: hidden;
+      }
+      .skill-bar-fill {
+        height: 100%;
+        width: 0%;
+        border-radius: 10px;
+        background: linear-gradient(90deg, #0077ff, #00c6ff);
+        transition: width 1.1s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* ===== DEBUG GAME SECTION ===== */
+      #game {
+        background: #0f1117;
+        color: #e0e0e0;
+      }
+      #game h2 {
+        color: #00c6ff;
+      }
+      #game h2::after {
+        background: linear-gradient(90deg, #00c6ff, #0077ff);
+      }
+      .game-intro {
+        font-size: 17px;
+        color: #888;
+        margin-bottom: 40px;
+        margin-top: -20px;
+      }
+      .game-container {
+        max-width: 760px;
+      }
+      .game-round-label {
+        font-size: 13px;
+        color: #0077ff;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 14px;
+      }
+      .code-challenge {
+        background: #1a1d27;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #2a2d3a;
+        margin-bottom: 20px;
+        font-family: "Courier New", monospace;
+      }
+      .code-header {
+        background: #252836;
+        padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 13px;
+        color: #888;
+      }
+      .code-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+      .code-dot-red {
+        background: #ff5f57;
+      }
+      .code-dot-yellow {
+        background: #ffbd2e;
+      }
+      .code-dot-green {
+        background: #28c940;
+      }
+      .code-body {
+        padding: 4px 0;
+      }
+      .code-line {
+        display: flex;
+        align-items: stretch;
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+      .code-line:hover {
+        background: rgba(0, 119, 255, 0.12);
+      }
+      .line-num {
+        min-width: 42px;
+        text-align: right;
+        padding: 7px 12px;
+        color: #555;
+        font-size: 13px;
+        user-select: none;
+        border-right: 1px solid #2a2d3a;
+      }
+      .line-code {
+        padding: 7px 16px;
+        font-size: 14px;
+        color: #cdd6f4;
+        white-space: pre;
+      }
+      .code-line.correct {
+        background: rgba(40, 201, 64, 0.15) !important;
+      }
+      .code-line.wrong {
+        background: rgba(255, 95, 87, 0.15) !important;
+        animation: cshake 0.3s ease;
+      }
+      .code-line.reveal-bug {
+        background: rgba(255, 189, 46, 0.1);
+      }
+      @keyframes cshake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-6px);
+        }
+        75% {
+          transform: translateX(6px);
+        }
+      }
+      .game-feedback {
+        font-size: 15px;
+        font-weight: 500;
+        min-height: 26px;
+        margin-bottom: 14px;
+        line-height: 1.5;
+      }
+      .game-feedback.success {
+        color: #28c940;
+      }
+      .game-feedback.fail {
+        color: #ff5f57;
+      }
+      .game-score {
+        font-size: 15px;
+        color: #666;
+        margin-bottom: 24px;
+      }
+      .game-score span {
+        color: #00c6ff;
+        font-weight: 600;
+      }
+      .game-result {
+        background: #1a1d27;
+        border-radius: 12px;
+        padding: 36px;
+        text-align: center;
+        border: 1px solid #2a2d3a;
+        display: none;
+      }
+      .game-result h3 {
+        font-size: 26px;
+        color: #00c6ff;
+        margin-bottom: 10px;
+      }
+      .game-result p {
+        color: #aaa;
+        font-size: 16px;
+        margin-bottom: 24px;
+      }
+      .btn-restart {
+        display: inline-block;
+        padding: 12px 28px;
+        background: #0077ff;
+        color: #fff;
+        border-radius: 30px;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+        font-size: 15px;
+        font-family: "Poppins", sans-serif;
+        transition: 0.3s;
+      }
+      .btn-restart:hover {
+        background: #005dd1;
+        transform: translateY(-2px);
+      }
+
+      /* ===== TERMINAL ===== */
+      .terminal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.82);
+        z-index: 9999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(5px);
+      }
+      .terminal-overlay.open {
+        display: flex;
+      }
+      .terminal-window {
+        width: min(700px, 92vw);
+        max-height: 76vh;
+        background: #0d1117;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow:
+          0 30px 80px rgba(0, 0, 0, 0.7),
+          0 0 0 1px #30363d;
+        display: flex;
+        flex-direction: column;
+        animation: termIn 0.22s ease;
+      }
+      @keyframes termIn {
+        from {
+          transform: scale(0.88) translateY(24px);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1) translateY(0);
+          opacity: 1;
+        }
+      }
+      .terminal-titlebar {
+        background: #21262d;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+      }
+      .term-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .term-dot-red {
+        background: #ff5f57;
+      }
+      .term-dot-yellow {
+        background: #ffbd2e;
+      }
+      .term-dot-green {
+        background: #28c940;
+      }
+      .terminal-title {
+        margin-left: 8px;
+        color: #8b949e;
+        font-size: 13px;
+        font-family: "Courier New", monospace;
+      }
+      .terminal-body {
+        flex: 1;
+        padding: 16px 20px;
+        overflow-y: auto;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        line-height: 1.85;
+        color: #e6edf3;
+      }
+      .terminal-body::-webkit-scrollbar {
+        width: 4px;
+      }
+      .terminal-body::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .terminal-body::-webkit-scrollbar-thumb {
+        background: #30363d;
+        border-radius: 4px;
+      }
+      .term-line {
+        margin: 0;
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+      .term-line.t-prompt {
+        color: #58a6ff;
+      }
+      .term-line.t-output {
+        color: #8b949e;
+      }
+      .term-line.t-success {
+        color: #3fb950;
+      }
+      .term-line.t-error {
+        color: #f85149;
+      }
+      .term-line.t-hl {
+        color: #ffa657;
+      }
+      .term-line.t-info {
+        color: #79c0ff;
+      }
+      .terminal-input-row {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        border-top: 1px solid #21262d;
+        background: #0d1117;
+        gap: 8px;
+        flex-shrink: 0;
+      }
+      .term-prompt-sym {
+        color: #58a6ff;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+      .terminal-input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #e6edf3;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        caret-color: #58a6ff;
+      }
+      .terminal-fab {
+        position: fixed;
+        bottom: 26px;
+        right: 30px;
+        background: #0d1117;
+        color: #58a6ff;
+        border: 1px solid #30363d;
+        border-radius: 50px;
+        padding: 11px 20px;
+        font-size: 13px;
+        font-family: "Courier New", monospace;
+        cursor: pointer;
+        z-index: 1000;
+        transition: all 0.25s;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+        animation: fab-float 3s ease-in-out infinite;
+      }
+      .terminal-fab:hover {
+        background: #0077ff;
+        border-color: #0077ff;
+        color: #fff;
+        animation: none;
+        transform: translateY(-3px);
+      }
+      @keyframes fab-float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-7px);
+        }
+      }
+
+      /* ===== EDU FLIP CARDS ===== */
+      .edu-flip-card {
+        perspective: 1400px;
+        margin-bottom: 40px;
+        position: relative;
+      }
+      .edu-flip-card::before {
+        content: "";
+        position: absolute;
+        left: -32px;
+        top: 35px;
+        width: 18px;
+        height: 18px;
+        background: #ffffff;
+        border: 4px solid #0077ff;
+        border-radius: 50%;
+        z-index: 2;
+      }
+      .edu-flip-inner {
+        display: grid;
+        transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-style: preserve-3d;
+        border-radius: 15px;
+      }
+      .edu-flip-card.flipped .edu-flip-inner {
+        transform: rotateY(180deg);
+      }
+      .edu-flip-front,
+      .edu-flip-back {
+        grid-area: 1 / 1;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        background: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        transition: box-shadow 0.3s;
+      }
+      .edu-flip-front {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        padding: 35px 35px 35px 40px;
+        overflow: hidden;
+      }
+      .edu-flip-front:hover {
+        box-shadow: 0 18px 40px rgba(0, 119, 255, 0.15);
+      }
+      .edu-flip-back {
+        transform: rotateY(180deg);
+        padding: 35px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .flip-trigger {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 16px;
+        padding: 7px 18px;
+        background: #f0f6ff;
+        color: #0077ff;
+        border: none;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .flip-trigger:hover {
+        background: #0077ff;
+        color: #fff;
+      }
+      .edu-back-label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #0077ff;
+        margin-bottom: 12px;
+      }
+      .edu-modules {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+      .edu-module-tag {
+        background: #f0f6ff;
+        color: #1f3c88;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .edu-progress-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1c1c1c;
+        margin-bottom: 8px;
+      }
+      .edu-progress-track {
+        background: #e8eff5;
+        border-radius: 10px;
+        height: 8px;
+        overflow: hidden;
+        margin-bottom: 22px;
+      }
+      .edu-progress-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #0077ff, #00c6ff);
+        border-radius: 10px;
+        transition: width 1s ease 0.2s;
+      }
+      .edu-status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 18px;
+        width: fit-content;
+      }
+      .edu-status-badge.done {
+        background: #d4f5dc;
+        color: #1a7a35;
+      }
+      .edu-status-badge.wip {
+        background: #fff3cd;
+        color: #856404;
+      }
+
+      /* ===== PROJECT FILTER TABS ===== */
+      .project-filters {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 35px;
+        flex-wrap: wrap;
+      }
+      .filter-btn {
+        padding: 9px 22px;
+        border: 2px solid #e0e8f5;
+        background: transparent;
+        color: #555;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .filter-btn:hover {
+        border-color: #0077ff;
+        color: #0077ff;
+      }
+      .filter-btn.active {
+        background: #0077ff;
+        border-color: #0077ff;
+        color: #fff;
+      }
+      .project-card.proj-hidden {
+        display: none;
+      }
+
+      /* ===== BTN OUTLINE ===== */
+      .btn-outline {
+        display: inline-block;
+        padding: 14px 28px;
+        background: transparent;
+        color: #0077ff;
+        border: 2px solid #0077ff;
+        border-radius: 30px;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        cursor: pointer;
+        font-size: inherit;
+        transition: 0.3s;
+      }
+      .btn-outline:hover {
+        background: #0077ff;
+        color: #fff;
+        transform: translateY(-3px);
+      }
+      .project-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      /* ===== PROJECT MODAL ===== */
+      .project-modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 9998;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        backdrop-filter: blur(4px);
+      }
+      .project-modal.open {
+        display: flex;
+      }
+      .modal-box {
+        background: #fff;
+        border-radius: 18px;
+        max-width: 680px;
+        width: 100%;
+        max-height: 85vh;
+        overflow-y: auto;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+        animation: modalIn 0.25s ease;
+      }
+      @keyframes modalIn {
+        from {
+          transform: scale(0.92) translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1) translateY(0);
+          opacity: 1;
+        }
+      }
+      .modal-header {
+        padding: 28px 32px 20px;
+        border-bottom: 1px solid #f0f0f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+        position: sticky;
+        top: 0;
+        background: #fff;
+        border-radius: 18px 18px 0 0;
+        z-index: 1;
+      }
+      .modal-header h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #1f3c88;
+        margin: 0;
+      }
+      .modal-close {
+        background: #f4f7fa;
+        border: none;
+        border-radius: 50%;
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: 0.2s;
+      }
+      .modal-close:hover {
+        background: #e0e8f5;
+      }
+      .modal-body {
+        padding: 24px 32px 32px;
+      }
+      .modal-section {
+        margin-bottom: 22px;
+      }
+      .modal-section-label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #0077ff;
+        margin-bottom: 8px;
+      }
+      .modal-section p {
+        font-size: 15px;
+        color: #444;
+        line-height: 1.75;
+        margin: 0;
+      }
+      .modal-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+      .modal-tag {
+        background: #f0f2f5;
+        color: #333;
+        padding: 5px 11px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      /* ===== SCROLL-IN CARD ANIMATION ===== */
+      .card-animate {
+        opacity: 0;
+        transform: translateY(36px);
+        transition:
+          opacity 0.55s ease,
+          transform 0.55s ease;
+      }
+      .card-animate.in-view {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
   </head>
+
   <body>
     <nav>
       <div class="logo">
         <img src="img/logo bawgg-01.png" />
+
         Xolani Shabangu
       </div>
+
       <ul>
         <li><a href="#home">Home</a></li>
+
         <li><a href="#stats">Stats</a></li>
+
         <li><a href="#education">Education</a></li>
+
         <li><a href="#projects">Projects</a></li>
+
         <li><a href="#skills">Skills</a></li>
+
+        <li><a href="#game">Debug Game</a></li>
+
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
     <section id="home" class="hero">
       <div class="worm-track"></div>
-      <div class="hero-text">
-        <h1>Hello👋🏼, I'm <span>Xolani</span></h1>
-        <p>
-          Graduate Software Developer with strong foundations in .NET
-          development, full-stack system architecture, SQL databases and Android
-          applications.
-        </p>
-        <a href="img/Xolani  Shabangu CV e.pdf" class="btn" download
-          >Download CV</a
-        >
-      </div>
-      <div class="hero-image-container">
-        <img src="img/Profile.jpeg" alt="Xolani Shabangu Profile" />
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badge">Open to Opportunities</div>
+
+          <h1>Hello👋🏼, I'm <span>Xolani</span></h1>
+
+          <p>
+            Graduate Software Developer with strong foundations in .NET
+            development, full-stack system architecture, SQL databases and
+            Android applications.
+          </p>
+
+          <span class="typewriter-line">
+            <span id="typewriter-text"></span
+            ><span class="typewriter-cursor"></span>
+          </span>
+
+          <div class="hero-actions">
+            <a href="img/Xolani  Shabangu CV e.pdf" class="btn" download
+              >Download CV</a
+            >
+            <div class="hero-social-links">
+              <a
+                href="https://github.com/XolaniShabangu"
+                class="hero-social-link"
+                target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a
+                href="https://linkedin.com/in/xolani-s-27b897224/"
+                class="hero-social-link"
+                target="_blank"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <div class="hero-image-container">
+            <img src="img/Profile.jpeg" alt="Xolani Shabangu Profile" />
+          </div>
+          <div class="hero-float-badge float-badge-1">⚡ .NET &amp; C#</div>
+          <div class="hero-float-badge float-badge-2">📱 Android Dev</div>
+          <div class="hero-float-badge float-badge-3">🗄️ SQL &amp; Azure</div>
+        </div>
       </div>
     </section>
 
@@ -810,31 +2069,47 @@
 
     <section id="stats">
       <h2>Professional Snapshot</h2>
+
       <div class="counters">
         <div class="counter-box">
-          <h3>4</h3>
+          <h3 class="count-up" data-target="4">0</h3>
+
           <p>Major Systems Built</p>
         </div>
+
         <div class="counter-box">
-          <h3>12+</h3>
+          <h3 class="count-up" data-target="12" data-suffix="+">0</h3>
+
           <p>Technologies Mastered</p>
         </div>
+
         <div class="counter-box">
-          <h3>3</h3>
+          <h3 class="count-up" data-target="3">0</h3>
+
           <p>Certifications Earned</p>
         </div>
       </div>
     </section>
 
     <!-- <section id="education">
+
       <h2>Education</h2>
 
+
+
       <div class="education-timeline">
+
         <div class="education-card">
+
           <div class="education-year">2025</div>
+
           <h3>Advanced Diploma in ICT (NQF7)</h3>
+
           <p>Durban University of Technology</p>
+
         </div>
+
+
 
         <div class="education-card">
           <div class="education-year">2024</div>
@@ -846,36 +2121,80 @@
 
     <section id="education">
       <h2>Education</h2>
-
       <div class="education-timeline">
-        <div class="education-card">
-          <div class="education-info">
-            <div class="education-year">2025</div>
-            <h3>Advanced Diploma in ICT (NQF7)</h3>
-            <p>Durban University of Technology</p>
-          </div>
-
-          <div class="education-images">
-            <div class="progress-wrapper">
-              <div class="img-placeholder"></div>
-              <div class="img-placeholder"></div>
-              <div class="img-placeholder"></div>
-              <div class="status-overlay">Coming Soon!</div>
+        <!-- 2025 Card -->
+        <div class="edu-flip-card" id="eduflip-0">
+          <div class="edu-flip-inner">
+            <div class="edu-flip-front">
+              <div class="education-info">
+                <div class="education-year">2025</div>
+                <h3>Advanced Diploma in ICT (NQF7)</h3>
+                <p>Durban University of Technology</p>
+                <button class="flip-trigger" onclick="flipEdu(0)">
+                  View Modules ↗
+                </button>
+              </div>
+              <div class="education-images">
+                <div class="progress-wrapper">
+                  <div class="img-placeholder"></div>
+                  <div class="img-placeholder"></div>
+                  <div class="img-placeholder"></div>
+                  <div class="status-overlay">Graduating soon</div>
+                </div>
+              </div>
+            </div>
+            <div class="edu-flip-back">
+              <span class="edu-status-badge done">🎓 Graduating soon</span>
+              <div class="edu-back-label">Key Modules</div>
+              <div class="edu-modules">
+                <span class="edu-module-tag"
+                  >Software Dev &amp; Management</span
+                >
+                <span class="edu-module-tag">Applied Mathematics</span>
+                <span class="edu-module-tag">Data Structures</span>
+                <span class="edu-module-tag">Platform Based Development</span>
+                <span class="edu-module-tag">Machine Intelligence</span>
+              </div>
+              <button class="flip-trigger" onclick="flipEdu(0)">← Back</button>
             </div>
           </div>
         </div>
 
-        <div class="education-card">
-          <div class="education-info">
-            <div class="education-year">2024</div>
-            <h3>Diploma in ICT: Applications Development</h3>
-            <p>Durban University of Technology</p>
-          </div>
-
-          <div class="education-images">
-            <img src="img/grad1.jpg" alt="Photo 1" class="edu-photo" />
-            <img src="img/grad2.jpg" alt="Photo 2" class="edu-photo" />
-            <img src="img/grad3.jpg" alt="Photo 3" class="edu-photo" />
+        <!-- 2024 Card -->
+        <div class="edu-flip-card" id="eduflip-1">
+          <div class="edu-flip-inner">
+            <div class="edu-flip-front">
+              <div class="education-info">
+                <div class="education-year">2024</div>
+                <h3>Diploma in ICT: Applications Development</h3>
+                <p>Durban University of Technology</p>
+                <button class="flip-trigger" onclick="flipEdu(1)">
+                  View Modules ↗
+                </button>
+              </div>
+              <div class="education-images">
+                <img src="img/grad1.jpg" alt="Photo 1" class="edu-photo" />
+                <img src="img/grad2.jpg" alt="Photo 2" class="edu-photo" />
+                <img src="img/grad3.jpg" alt="Photo 3" class="edu-photo" />
+              </div>
+            </div>
+            <div class="edu-flip-back">
+              <span class="edu-status-badge done">✓ Graduated</span>
+              <div class="edu-back-label">Key Modules</div>
+              <div class="edu-modules">
+                <span class="edu-module-tag">Applications Development 1</span>
+                <span class="edu-module-tag">Applications Development 2</span>
+                <span class="edu-module-tag">Applications Development 3</span>
+                <span class="edu-module-tag">Information Systems 1</span>
+                <span class="edu-module-tag">Information Systems 2</span>
+                <span class="edu-module-tag">Information Systems 3</span>
+                <span class="edu-module-tag">Mobile Development</span>
+                <span class="edu-module-tag">Business Fundamentals</span>
+                <span class="edu-module-tag">Project Management</span>
+                <span class="edu-module-tag">Software Testing</span>
+              </div>
+              <button class="flip-trigger" onclick="flipEdu(1)">← Back</button>
+            </div>
           </div>
         </div>
       </div>
@@ -884,131 +2203,144 @@
     <section id="projects">
       <h2>Projects</h2>
 
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+      </div>
+
       <div class="projects-grid">
         <!-- 1. Fountain Court -->
-        <div class="project-card">
+        <div
+          class="project-card card-animate"
+          data-category="web fullstack"
+          data-project="fountain"
+        >
           <img src="img/fountaincourt.png" alt="Fountain Court Project Image" />
           <div class="project-content">
             <h3>Fountain Court Residents</h3>
-
             <div class="tech-stack">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>Bootstrap</span>
-              <span>ASP.NET MVC 5</span>
-              <span>C#</span>
-              <span>SQL Server</span>
-              <span>Entity Framework</span>
-              <span>Azure OCR</span>
-              <span>PayFast</span>
-              <span>MailKit SMTP</span>
+              <span>HTML</span><span>CSS</span><span>Bootstrap</span
+              ><span>ASP.NET MVC 5</span> <span>C#</span><span>SQL Server</span
+              ><span>Entity Framework</span> <span>Azure OCR</span
+              ><span>PayFast</span><span>MailKit SMTP</span>
             </div>
-
             <p>
               A full rental and tenant management platform that streamlines
               property operations for landlords, tenants, and maintenance teams.
             </p>
-
-            <a
-              href="https://github.com/XolaniShabangu/FountainCourt-Apartments"
-              class="btn"
-              target="_blank"
-              >View on GitHub</a
-            >
+            <div class="project-actions">
+              <a
+                href="https://github.com/XolaniShabangu/FountainCourt-Apartments"
+                class="btn"
+                target="_blank"
+                >View on GitHub</a
+              >
+              <button class="btn-outline" onclick="openModal('fountain')">
+                Case Study
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- 2. SafeDUT -->
-        <div class="project-card">
+        <div
+          class="project-card card-animate"
+          data-category="mobile"
+          data-project="safedut"
+        >
           <img src="img/safeDUT.jpg" alt="SafeDUT Project Image" />
           <div class="project-content">
             <h3>SafeDUT – Smart Security Alert System</h3>
-
             <div class="tech-stack">
-              <span>Android</span>
-              <span>Java</span>
-              <span>Kotlin</span>
-              <span>Firebase</span>
-              <span>Google Maps API</span>
-              <span>NLP Chatbot</span>
+              <span>Android</span><span>Java</span><span>Kotlin</span>
+              <span>Firebase</span><span>Google Maps API</span
+              ><span>NLP Chatbot</span>
             </div>
-
             <p>
               A campus safety mobile application built for DUT. SafeDUT enables
               real-time emergency alerts, location-based incident reporting,
               enhancing response time and improves situational awareness.
             </p>
-
-            <a
-              href="https://github.com/XolaniShabangu/SafeDUT"
-              class="btn"
-              target="_blank"
-              >View on GitHub</a
-            >
+            <div class="project-actions">
+              <a
+                href="https://github.com/XolaniShabangu/SafeDUT"
+                class="btn"
+                target="_blank"
+                >View on GitHub</a
+              >
+              <button class="btn-outline" onclick="openModal('safedut')">
+                Case Study
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- 3. Northmed Clinic -->
-        <div class="project-card">
+        <div
+          class="project-card card-animate"
+          data-category="web fullstack"
+          data-project="northmed"
+        >
           <img src="img/northmed.png" alt="Northmed Clinic Project Image" />
           <div class="project-content">
             <h3>Northmed Clinic Inventory System</h3>
-
             <div class="tech-stack">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>C#</span>
-              <span>SQL Server</span>
-              <span>Azure</span>
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              <span>C#</span><span>SQL Server</span><span>Azure</span>
             </div>
-
             <p>
               A medical inventory optimization system designed for pharmacists
               and suppliers. The application minimizes procurement costs while
               maintaining optimal medicine stock levels.
             </p>
-
-            <a
-              href="https://github.com/sefehle/Inventory-management-system"
-              class="btn"
-              target="_blank"
-              >View on GitHub</a
-            >
+            <div class="project-actions">
+              <a
+                href="https://github.com/sefehle/Inventory-management-system"
+                class="btn"
+                target="_blank"
+                >View on GitHub</a
+              >
+              <button class="btn-outline" onclick="openModal('northmed')">
+                Case Study
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- 4. Book Buffet -->
-        <div class="project-card">
+        <div
+          class="project-card card-animate"
+          data-category="web fullstack"
+          data-project="bookbuffet"
+        >
           <img src="img/bookbuffet.png" alt="Book Buffet Project Image" />
           <div class="project-content">
             <h3>The Book Buffet System</h3>
-
             <div class="tech-stack">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>C#</span>
-              <span>Azure OCR</span>
-              <span>Azure Text-to-Speech</span>
-              <span>SQL Database</span>
-              <span>Facebook API</span>
+              <span>HTML</span><span>CSS</span><span>JavaScript</span
+              ><span>C#</span> <span>Azure OCR</span
+              ><span>Azure Text-to-Speech</span> <span>SQL Database</span
+              ><span>Facebook API</span>
             </div>
-
             <p>
-              A digital bookstore platform that combines eCommerce functionality
-              with content creation opportunities. Users can purchase books
-              while creators contribute eBooks and audiobooks. Azure AI services
-              power text recognition and text-to-speech conversion for enhanced
-              accessibility.
+              A digital bookstore platform combining eCommerce with content
+              creation. Users purchase books while creators contribute eBooks
+              and audiobooks. Azure AI powers text recognition and
+              text-to-speech for accessibility.
             </p>
-
-            <a
-              href="https://github.com/XolaniShabangu/Tickets-Sales-AND-Jobs-Application"
-              class="btn"
-              target="_blank"
-              >View on GitHub</a
-            >
+            <div class="project-actions">
+              <a
+                href="https://github.com/XolaniShabangu/Tickets-Sales-AND-Jobs-Application"
+                class="btn"
+                target="_blank"
+                >View on GitHub</a
+              >
+              <button class="btn-outline" onclick="openModal('bookbuffet')">
+                Case Study
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -1020,12 +2352,60 @@
       <div class="skills-category">
         <h3>Languages</h3>
         <div class="skills-grid">
-          <div class="skill-card"><i class="fab fa-python"></i> Python</div>
-          <div class="skill-card"><i class="fab fa-js"></i> JavaScript</div>
-          <div class="skill-card"><i class="fas fa-code"></i> C#</div>
-          <div class="skill-card"><i class="fas fa-database"></i> SQL</div>
-          <div class="skill-card"><i class="fab fa-html5"></i> HTML5</div>
-          <div class="skill-card"><i class="fab fa-css3-alt"></i> CSS3</div>
+          <div class="skill-card">
+            <i class="fab fa-python"></i>
+            <div class="skill-name">Python</div>
+            <div class="skill-bar-wrapper">
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="75"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-js"></i>
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-bar-wrapper">
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="82"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-code"></i>
+            <div class="skill-name">C#</div>
+            <div class="skill-bar-wrapper">
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="88"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-database"></i>
+            <div class="skill-name">SQL</div>
+            <div class="skill-bar-wrapper">
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="85"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-html5"></i>
+            <div class="skill-name">HTML5</div>
+            <div class="skill-bar-wrapper">
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="92"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-css3-alt"></i>
+            <div class="skill-name">CSS3</div>
+            <div class="skill-bar-wrapper">
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="88"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1033,30 +2413,102 @@
         <h3>Frameworks</h3>
         <div class="skills-grid">
           <div class="skill-card">
-            <i class="fas fa-layer-group"></i> ASP.NET
+            <i class="fas fa-layer-group"></i>
+            <div class="skill-name">ASP.NET</div>
+            <div class="skill-bar-wrapper">
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="85"></div>
+              </div>
+            </div>
           </div>
-          <div class="skill-card"><i class="fas fa-flask"></i> Flask</div>
+          <div class="skill-card">
+            <i class="fas fa-flask"></i>
+            <div class="skill-name">Flask</div>
+            <div class="skill-bar-wrapper">
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="68"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="skills-category">
         <h3>Tools & Platforms</h3>
         <div class="skills-grid">
-          <div class="skill-card"><i class="fab fa-git-alt"></i> Git</div>
-
           <div class="skill-card">
-            <i class="fas fa-laptop-code"></i> Visual Studio Code
+            <i class="fab fa-git-alt"></i>
+            <div class="skill-name">Git</div>
+            <div class="skill-bar-wrapper">
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="80"></div>
+              </div>
+            </div>
           </div>
-
           <div class="skill-card">
-            <i class="fas fa-mobile-alt"></i> Android Studio
+            <i class="fas fa-laptop-code"></i>
+            <div class="skill-name">VS Code</div>
+            <div class="skill-bar-wrapper">
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="93"></div>
+              </div>
+            </div>
           </div>
+          <div class="skill-card">
+            <i class="fas fa-mobile-alt"></i>
+            <div class="skill-name">Android Studio</div>
+            <div class="skill-bar-wrapper">
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="78"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-cloud"></i>
+            <div class="skill-name">Firebase</div>
+            <div class="skill-bar-wrapper">
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="75"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-server"></i>
+            <div class="skill-name">SQL Server</div>
+            <div class="skill-bar-wrapper">
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="83"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-database"></i>
+            <div class="skill-name">MySQL</div>
+            <div class="skill-bar-wrapper">
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-width="78"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="skill-card"><i class="fas fa-cloud"></i> Firebase</div>
-
-          <div class="skill-card"><i class="fas fa-server"></i> SQL Server</div>
-
-          <div class="skill-card"><i class="fas fa-database"></i> MySQL</div>
+    <section id="game">
+      <h2>Debug Challenge</h2>
+      <p class="game-intro">
+        Think you can spot the bug? Click the line with the error. Three rounds.
+        No Googling. 👀
+      </p>
+      <div class="game-container">
+        <div id="game-round-display" class="game-round-label">Round 1 of 3</div>
+        <div id="game-challenge"></div>
+        <div id="game-feedback" class="game-feedback"></div>
+        <div class="game-score">Score: <span id="game-score">0</span> / 3</div>
+        <div id="game-result" class="game-result">
+          <h3 id="result-title"></h3>
+          <p id="result-message"></p>
+          <button class="btn-restart" onclick="initGame()">Play Again</button>
         </div>
       </div>
     </section>
@@ -1067,6 +2519,7 @@
       <div class="business-card">
         <div class="card-header">
           <h3>Xolani Shabangu</h3>
+
           <span>Graduate Software Developer</span>
         </div>
 
@@ -1075,6 +2528,7 @@
         <div class="card-contacts">
           <div class="contact-item">
             <i class="fas fa-envelope"></i>
+
             <a href="mailto:xolanishabangu97@gmail.com">
               xolanishabangu97@gmail.com
             </a>
@@ -1082,13 +2536,15 @@
 
           <div class="contact-item">
             <i class="fas fa-phone"></i>
+
             <a href="tel:+27796159156"> +27 79 615 9156 </a>
           </div>
 
           <div class="contact-item">
             <i class="fab fa-linkedin"></i>
+
             <a
-              href="www.linkedin.com/in/xolanishabangu"
+              href="https://linkedin.com/in/xolani-s-27b897224/"
               target="_blank"
             >
               linkedin.com/in/XolaniShabangu
@@ -1097,6 +2553,7 @@
 
           <div class="contact-item">
             <i class="fab fa-github"></i>
+
             <a href="https://github.com/XolaniShabangu" target="_blank">
               github.com/XolaniShabangu
             </a>
@@ -1105,18 +2562,789 @@
       </div>
     </section>
 
+    <!-- PROJECT MODAL -->
+    <div class="project-modal" id="project-modal">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="modal-title"></h3>
+          <button class="modal-close" onclick="closeModal()">&#10005;</button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+      </div>
+    </div>
+
+    <!-- TERMINAL OVERLAY -->
+    <div class="terminal-overlay" id="terminal-overlay">
+      <div class="terminal-window">
+        <div class="terminal-titlebar">
+          <div
+            class="term-dot term-dot-red"
+            onclick="closeTerminal()"
+            title="Close"
+          ></div>
+          <div class="term-dot term-dot-yellow"></div>
+          <div class="term-dot term-dot-green"></div>
+          <span class="terminal-title">xolani@portfolio — bash</span>
+        </div>
+        <div class="terminal-body" id="terminal-body"></div>
+        <div class="terminal-input-row">
+          <span class="term-prompt-sym">xolani@portfolio:~$&nbsp;</span>
+          <input
+            type="text"
+            id="terminal-input"
+            class="terminal-input"
+            placeholder="type 'help' to start…"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- TERMINAL FAB -->
+    <button
+      class="terminal-fab"
+      onclick="openTerminal()"
+      title="Open Terminal  (press ` or F2)"
+    >
+      &gt;_ terminal
+    </button>
+
     <script>
+      // === RIGHT-CLICK PROTECTION ===
       document.addEventListener(
         "contextmenu",
         function (e) {
-          if (e.target.tagName === "IMG") {
-            e.preventDefault();
-          }
+          if (e.target.tagName === "IMG") e.preventDefault();
         },
         false,
       );
+
+      // === TYPEWRITER ===
+      (function () {
+        const phrases = [
+          "Full-Stack Developer",
+          "Android Builder",
+          ".NET Specialist",
+          "Problem Solver",
+          "Available for Hire ✓",
+        ];
+        const el = document.getElementById("typewriter-text");
+        if (!el) return;
+        let pi = 0,
+          ci = 0,
+          deleting = false;
+        function tick() {
+          const cur = phrases[pi];
+          if (!deleting) {
+            el.textContent = cur.slice(0, ci + 1);
+            ci++;
+            if (ci === cur.length) {
+              deleting = true;
+              setTimeout(tick, 1800);
+              return;
+            }
+          } else {
+            el.textContent = cur.slice(0, ci - 1);
+            ci--;
+            if (ci === 0) {
+              deleting = false;
+              pi = (pi + 1) % phrases.length;
+            }
+          }
+          setTimeout(tick, deleting ? 55 : 95);
+        }
+        setTimeout(tick, 900);
+      })();
+
+      // === SCROLL COUNTERS ===
+      (function () {
+        const counters = document.querySelectorAll(".count-up");
+        if (!counters.length) return;
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && !entry.target.dataset.done) {
+                entry.target.dataset.done = "1";
+                const target = parseInt(entry.target.dataset.target);
+                const suffix = entry.target.dataset.suffix || "";
+                const delay = 1400 / target;
+                let cur = 0;
+                const t = setInterval(() => {
+                  cur++;
+                  entry.target.textContent = cur + suffix;
+                  if (cur >= target) clearInterval(t);
+                }, delay);
+              }
+            });
+          },
+          { threshold: 0.6 },
+        );
+        counters.forEach((c) => obs.observe(c));
+      })();
+
+      // === SKILL BARS ===
+      (function () {
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target
+                  .querySelectorAll(".skill-bar-fill")
+                  .forEach((fill) => {
+                    fill.style.width = fill.dataset.width + "%";
+                  });
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.2 },
+        );
+        document
+          .querySelectorAll(".skills-category")
+          .forEach((s) => obs.observe(s));
+      })();
+
+      // === DEBUG GAME ===
+      const challenges = [
+        {
+          lang: "JavaScript",
+          ext: "js",
+          lines: [
+            { code: "function calculateDiscount(price) {", bug: false },
+            { code: "  let discount = 0.1;", bug: false },
+            { code: "  if (price >= 100) {", bug: false },
+            { code: "    discount == 0.2;", bug: true },
+            { code: "  }", bug: false },
+            { code: "  return price - (price * discount);", bug: false },
+            { code: "}", bug: false },
+          ],
+          hint: "== checks equality but does not assign. Use = to update discount.",
+        },
+        {
+          lang: "C#",
+          ext: "cs",
+          lines: [
+            {
+              code: "public int GetTotal(List\u003cint\u003e numbers) {",
+              bug: false,
+            },
+            { code: "  int total = 0;", bug: false },
+            {
+              code: "  for (int i = 0; i \u003c= numbers.Count; i++) {",
+              bug: true,
+            },
+            { code: "    total += numbers[i];", bug: false },
+            { code: "  }", bug: false },
+            { code: "  return total;", bug: false },
+            { code: "}", bug: false },
+          ],
+          hint: "i <= numbers.Count goes one index too far. Use i < numbers.Count.",
+        },
+        {
+          lang: "SQL",
+          ext: "sql",
+          lines: [
+            { code: "SELECT users.name, SUM(orders.total)", bug: false },
+            { code: "FROM users", bug: false },
+            { code: "JOIN orders ON users.id = orders.user_id", bug: false },
+            { code: "WHERE orders.status = 'pending'", bug: false },
+            { code: "GROUP users.name", bug: true },
+            { code: "HAVING SUM(orders.total) > 500;", bug: false },
+          ],
+          hint: "Missing the BY keyword. It should be GROUP BY users.name.",
+        },
+      ];
+
+      let gameRound = 0,
+        gameScore = 0,
+        gameAnswered = false;
+
+      function escHtml(s) {
+        return s
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+      }
+
+      function renderChallenge(idx) {
+        gameAnswered = false;
+        const ch = challenges[idx];
+        document.getElementById("game-round-display").textContent =
+          "Round " +
+          (idx + 1) +
+          " of " +
+          challenges.length +
+          " \u2014 " +
+          ch.lang;
+        const fb = document.getElementById("game-feedback");
+        fb.textContent = "";
+        fb.className = "game-feedback";
+        document.getElementById("game-result").style.display = "none";
+
+        let html =
+          '<div class="code-challenge">' +
+          '<div class="code-header">' +
+          '<div class="code-dot code-dot-red"></div>' +
+          '<div class="code-dot code-dot-yellow"></div>' +
+          '<div class="code-dot code-dot-green"></div>' +
+          '<span style="margin-left:8px">' +
+          ch.lang.toLowerCase() +
+          "." +
+          ch.ext +
+          "</span>" +
+          '</div><div class="code-body">';
+
+        ch.lines.forEach((line, i) => {
+          html +=
+            '<div class="code-line" data-li="' +
+            i +
+            '" onclick="checkLine(' +
+            idx +
+            "," +
+            i +
+            ')">' +
+            '<span class="line-num">' +
+            (i + 1) +
+            "</span>" +
+            '<span class="line-code">' +
+            escHtml(line.code) +
+            "</span>" +
+            "</div>";
+        });
+        html += "</div></div>";
+        document.getElementById("game-challenge").innerHTML = html;
+      }
+
+      function checkLine(ci, li) {
+        if (gameAnswered) return;
+        gameAnswered = true;
+        const ch = challenges[ci];
+        const lineEl = document.querySelector('[data-li="' + li + '"]');
+        const fb = document.getElementById("game-feedback");
+
+        if (ch.lines[li].bug) {
+          lineEl.classList.add("correct");
+          fb.textContent = "\u2713 Caught it! " + ch.hint;
+          fb.className = "game-feedback success";
+          gameScore++;
+          document.getElementById("game-score").textContent = gameScore;
+        } else {
+          lineEl.classList.add("wrong");
+          const bugIdx = ch.lines.findIndex((l) => l.bug);
+          const bugEl = document.querySelector('[data-li="' + bugIdx + '"]');
+          if (bugEl) bugEl.classList.add("reveal-bug");
+          fb.textContent = "\u2717 Not quite. " + ch.hint;
+          fb.className = "game-feedback fail";
+        }
+
+        setTimeout(() => {
+          gameRound++;
+          if (gameRound < challenges.length) {
+            renderChallenge(gameRound);
+          } else {
+            showResult();
+          }
+        }, 2100);
+      }
+
+      function showResult() {
+        document.getElementById("game-challenge").innerHTML = "";
+        document.getElementById("game-round-display").textContent =
+          "Game Over!";
+        document.getElementById("game-feedback").textContent = "";
+        const msgs = {
+          0: {
+            t: "\uD83E\uDD14 Keep Practicing",
+            m: "0/3 \u2014 Bugs are sneaky. Give it another shot!",
+          },
+          1: {
+            t: "\uD83D\uDE42 Not Bad",
+            m: "1/3 \u2014 You got one! Keep sharpening those debugging skills.",
+          },
+          2: {
+            t: "\uD83D\uDC40 Sharp Eye!",
+            m: "2/3 \u2014 Solid. You'd catch most bugs in a real code review.",
+          },
+          3: {
+            t: "\uD83D\uDC1B Bug Slayer",
+            m: "3/3 Perfect score! You're exactly the kind of dev Xolani wants on his team.",
+          },
+        };
+        const m = msgs[gameScore];
+        document.getElementById("result-title").textContent = m.t;
+        document.getElementById("result-message").textContent = m.m;
+        document.getElementById("game-result").style.display = "block";
+      }
+
+      function initGame() {
+        gameRound = 0;
+        gameScore = 0;
+        document.getElementById("game-score").textContent = "0";
+        renderChallenge(0);
+      }
+
+      document.addEventListener("DOMContentLoaded", initGame);
+
+      // === TERMINAL ===
+      const CMDS = {
+        help: () => [
+          [
+            "t-info",
+            "  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510",
+          ],
+          ["t-info", "  \u2502     Available Commands              \u2502"],
+          [
+            "t-info",
+            "  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+          ],
+          ["t-success", "  about            \u2192 Who is Xolani?"],
+          ["t-success", "  skills           \u2192 Tech stack"],
+          ["t-success", "  projects         \u2192 Portfolio projects"],
+          ["t-success", "  contact          \u2192 Get in touch"],
+          ["t-success", "  whoami           \u2192 Fun fact"],
+          ["t-success", "  ls               \u2192 List sections"],
+          ["t-success", "  cat cv.pdf       \u2192 Get the CV"],
+          ["t-success", "  sudo hire xolani \u2192 \uD83D\uDC40"],
+          ["t-success", "  matrix           \u2192 \uD83D\uDFE9"],
+          ["t-success", "  clear            \u2192 Clear screen"],
+          ["t-success", "  exit             \u2192 Close terminal"],
+          ["t-output", ""],
+        ],
+        about: () => [
+          ["t-hl", "> Xolani Shabangu \u2014 Graduate Software Developer"],
+          ["t-output", ""],
+          ["t-output", "  Builds full-stack systems, mobile apps, and"],
+          ["t-output", "  scalable platforms using .NET, Android, SQL,"],
+          ["t-output", "  and cloud tools like Azure & Firebase."],
+          ["t-output", ""],
+          [
+            "t-output",
+            "  Based in Durban, South Africa \uD83C\uDDFF\uD83C\uDDE6",
+          ],
+          ["t-output", "  DUT Advanced Diploma in ICT (NQF7) \u2014 2025"],
+          ["t-output", ""],
+        ],
+        skills: () => [
+          ["t-hl", "> Technical Skills"],
+          ["t-output", ""],
+          [
+            "t-success",
+            "  Languages:   Python, JavaScript, C#, SQL, HTML5, CSS3",
+          ],
+          ["t-success", "  Frameworks:  ASP.NET MVC, Flask"],
+          ["t-success", "  Mobile:      Android (Java, Kotlin)"],
+          ["t-success", "  Cloud:       Azure OCR, Azure TTS, Firebase"],
+          ["t-success", "  Databases:   SQL Server, MySQL"],
+          ["t-success", "  Tools:       Git, VS Code, Android Studio"],
+          ["t-output", ""],
+        ],
+        projects: () => [
+          ["t-hl", "> Portfolio Projects"],
+          ["t-output", ""],
+          ["t-info", "  [1] Fountain Court Residents"],
+          [
+            "t-output",
+            "      ASP.NET MVC \u00b7 C# \u00b7 SQL Server \u00b7 Azure OCR \u00b7 PayFast",
+          ],
+          ["t-info", "  [2] SafeDUT \u2013 Smart Security Alert System"],
+          [
+            "t-output",
+            "      Android \u00b7 Java \u00b7 Kotlin \u00b7 Firebase \u00b7 Maps API",
+          ],
+          ["t-info", "  [3] Northmed Clinic Inventory System"],
+          [
+            "t-output",
+            "      HTML \u00b7 CSS \u00b7 JS \u00b7 C# \u00b7 SQL Server \u00b7 Azure",
+          ],
+          ["t-info", "  [4] The Book Buffet System"],
+          [
+            "t-output",
+            "      HTML \u00b7 CSS \u00b7 C# \u00b7 Azure OCR/TTS \u00b7 Facebook API",
+          ],
+          ["t-output", ""],
+        ],
+        contact: () => [
+          ["t-hl", "> Contact Info"],
+          ["t-output", ""],
+          ["t-success", "  Email:    xolanishabangu97@gmail.com"],
+          ["t-success", "  Phone:    +27 79 615 9156"],
+          ["t-success", "  LinkedIn: linkedin.com/in/xolani-s-27b897224/"],
+          ["t-success", "  GitHub:   github.com/XolaniShabangu"],
+          ["t-output", ""],
+        ],
+        whoami: () => [
+          ["t-output", ""],
+          ["t-hl", "  xolani \u2014 (noun)"],
+          ["t-output", "  A developer who turns caffeine and logic"],
+          ["t-output", "  into systems that actually work."],
+          ["t-output", ""],
+          ["t-output", "  grep: 1 result found in humans.db"],
+          ["t-success", "  status: available_for_hire=true, passion=HIGH"],
+          ["t-output", ""],
+        ],
+        ls: () => [
+          ["t-output", "total 7 sections"],
+          ["t-info", "  drwxr-xr-x  home/"],
+          ["t-info", "  drwxr-xr-x  stats/"],
+          ["t-info", "  drwxr-xr-x  education/"],
+          ["t-info", "  drwxr-xr-x  projects/"],
+          ["t-info", "  drwxr-xr-x  skills/"],
+          ["t-info", "  drwxr-xr-x  debug-challenge/"],
+          ["t-info", "  drwxr-xr-x  contact/"],
+          ["t-output", ""],
+        ],
+        "cat cv.pdf": () => [
+          ["t-output", "Reading cv.pdf..."],
+          ["t-output", ""],
+          ["t-success", "  CV is available for download on the main page."],
+          [
+            "t-info",
+            '  Tip: hit the "Download CV" button in the hero section.',
+          ],
+          ["t-output", ""],
+        ],
+        "sudo hire xolani": () => [
+          ["t-output", "[sudo] password for hiring_manager: "],
+          ["t-output", ""],
+          ["t-success", "\u2713 Access granted. Excellent taste confirmed."],
+          ["t-output", ""],
+          ["t-hl", "  Initiating hire sequence..."],
+          [
+            "t-output",
+            "  \u2192 Checking availability............. [AVAILABLE]",
+          ],
+          [
+            "t-output",
+            "  \u2192 Verifying skills.................. [VERIFIED]",
+          ],
+          ["t-output", "  \u2192 Enthusiasm level.................. [MAXIMUM]"],
+          ["t-output", ""],
+          ["t-success", "  Xolani has been added to your team. \uD83C\uDF89"],
+          ["t-info", "  Next step: xolanishabangu97@gmail.com"],
+          ["t-output", ""],
+        ],
+      };
+
+      let termHistory = [],
+        termHi = -1;
+
+      function openTerminal() {
+        const ov = document.getElementById("terminal-overlay");
+        ov.classList.add("open");
+        if (!document.getElementById("terminal-body").children.length)
+          printWelcome();
+        setTimeout(() => document.getElementById("terminal-input").focus(), 50);
+      }
+
+      function closeTerminal() {
+        document.getElementById("terminal-overlay").classList.remove("open");
+      }
+
+      function appendTLine(cls, text) {
+        const body = document.getElementById("terminal-body");
+        const p = document.createElement("p");
+        p.className = "term-line " + cls;
+        p.textContent = text;
+        body.appendChild(p);
+        body.scrollTop = body.scrollHeight;
+      }
+
+      function printWelcome() {
+        [
+          ["t-success", ""],
+          [
+            "t-success",
+            "  \u2588\u2588\u2557  \u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2557      \u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2557   \u2588\u2588\u2557\u2588\u2588\u2557",
+          ],
+          [
+            "t-success",
+            "   \u2588\u2588\u2554\u255d  \u2588\u2588\u2554\u255d\u2588\u2588\u2554\u2550\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2551     \u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2551\u2588\u2588\u2551",
+          ],
+          [
+            "t-success",
+            "    \u255a\u2588\u2588\u2554\u255d  \u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2551     \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551\u2588\u2588\u2554\u2588\u2588\u2557\u2588\u2588\u2551\u2588\u2588\u2551",
+          ],
+          [
+            "t-success",
+            "    \u2588\u2588\u2554\u255d   \u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2551     \u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2551\u2588\u2588\u2551\u255a\u2588\u2588\u2588\u2588\u2551\u2588\u2588\u2551",
+          ],
+          [
+            "t-success",
+            "   \u2588\u2588\u2554\u255d    \u255a\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2551 \u255a\u2588\u2588\u2588\u2551\u2588\u2588\u2551",
+          ],
+          [
+            "t-success",
+            "   \u255a\u2550\u255d     \u255a\u2550\u2550\u2550\u2550\u2550\u255d \u255a\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d  \u255a\u2550\u255d\u255a\u2550\u255d  \u255a\u2550\u2550\u255d\u255a\u2550\u255d",
+          ],
+          ["t-output", ""],
+          ["t-info", "  Welcome to Xolani's portfolio terminal."],
+          ["t-output", "  Type 'help' to see available commands."],
+          ["t-output", ""],
+        ].forEach(([cls, text]) => appendTLine(cls, text));
+      }
+
+      function runMatrix() {
+        const chars =
+          "01\u30A2\u30A4\u30A6\u30A8\u30AA\u30AB\u30AD\u30AF\u30B1\u30B3\u30B5\u30B7\u30B9\u30BB\u30BD\u30BF\u30C1\u30C4\u30C6\u30C8\u30CA\u30CB\u30CC\u30CD\u30CE";
+        let n = 0;
+        const iv = setInterval(() => {
+          let row = "  ";
+          for (let i = 0; i < 55; i++)
+            row += chars[Math.floor(Math.random() * chars.length)];
+          appendTLine("t-success", row);
+          if (++n > 14) {
+            clearInterval(iv);
+            appendTLine("t-output", "");
+            appendTLine("t-info", "  [matrix mode disengaged]");
+            appendTLine("t-output", "");
+          }
+        }, 75);
+      }
+
+      function handleTermInput(e) {
+        if (e.key === "Enter") {
+          const inp = document.getElementById("terminal-input");
+          const cmd = inp.value.trim();
+          if (!cmd) return;
+          termHistory.unshift(cmd);
+          termHi = -1;
+          appendTLine("t-prompt", "xolani@portfolio:~$ " + cmd);
+          inp.value = "";
+          const lower = cmd.toLowerCase();
+          if (lower === "clear") {
+            document.getElementById("terminal-body").innerHTML = "";
+            return;
+          }
+          if (lower === "exit" || lower === "close") {
+            appendTLine("t-output", "Closing terminal...");
+            setTimeout(closeTerminal, 500);
+            return;
+          }
+          if (lower === "matrix") {
+            appendTLine("t-info", "  Entering the Matrix...");
+            appendTLine("t-output", "");
+            runMatrix();
+            return;
+          }
+          const handler = CMDS[lower];
+          if (handler) {
+            handler().forEach(([cls, text]) => appendTLine(cls, text));
+          } else {
+            appendTLine("t-error", "  bash: " + cmd + ": command not found");
+            appendTLine("t-output", "  Type 'help' for available commands.");
+            appendTLine("t-output", "");
+          }
+        } else if (e.key === "ArrowUp") {
+          if (termHi < termHistory.length - 1)
+            document.getElementById("terminal-input").value =
+              termHistory[++termHi];
+          e.preventDefault();
+        } else if (e.key === "ArrowDown") {
+          if (termHi > 0)
+            document.getElementById("terminal-input").value =
+              termHistory[--termHi];
+          else {
+            termHi = -1;
+            document.getElementById("terminal-input").value = "";
+          }
+          e.preventDefault();
+        } else if (e.key === "Escape") {
+          closeTerminal();
+        }
+      }
+
+      document
+        .getElementById("terminal-input")
+        .addEventListener("keydown", handleTermInput);
+
+      document
+        .getElementById("terminal-overlay")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeTerminal();
+        });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "`" || e.key === "F2") {
+          const ov = document.getElementById("terminal-overlay");
+          ov.classList.contains("open") ? closeTerminal() : openTerminal();
+        }
+      });
+    </script>
+    <script>
+      // === EDU FLIP ===
+      function flipEdu(idx) {
+        const card = document.getElementById("eduflip-" + idx);
+        card.classList.toggle("flipped");
+        if (card.classList.contains("flipped")) {
+          card.querySelectorAll(".edu-progress-fill").forEach(function (fill) {
+            fill.style.width = fill.dataset.width + "%";
+          });
+        }
+      }
+
+      // === PROJECT FILTER TABS ===
+      document.querySelectorAll(".filter-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          document.querySelectorAll(".filter-btn").forEach(function (b) {
+            b.classList.remove("active");
+          });
+          this.classList.add("active");
+          var filter = this.dataset.filter;
+          document.querySelectorAll(".project-card").forEach(function (card) {
+            if (filter === "all" || card.dataset.category.includes(filter)) {
+              card.classList.remove("proj-hidden");
+            } else {
+              card.classList.add("proj-hidden");
+            }
+          });
+        });
+      });
+
+      // === SCROLL-IN CARD ANIMATIONS ===
+      (function () {
+        var cards = Array.from(document.querySelectorAll(".card-animate"));
+        cards.forEach(function (card, i) {
+          card.style.transitionDelay = (i % 3) * 0.12 + "s";
+        });
+        var obs = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+        cards.forEach(function (c) {
+          obs.observe(c);
+        });
+      })();
+
+      // === PROJECT CASE STUDY MODAL ===
+      var caseStudies = {
+        fountain: {
+          title: "Fountain Court Residents",
+          problem:
+            "Property managers were handling tenant onboarding, lease tracking, and maintenance requests manually — leading to errors, delays, and poor tenant communication.",
+          role: "Full-stack developer. Designed the database schema, built the ASP.NET MVC architecture, implemented the PayFast payment gateway, and integrated Azure OCR for lease document scanning.",
+          challenge:
+            "Integrating PayFast's payment flow with real-time lease status updates required careful state management across the MVC pipeline. Azure OCR accuracy for handwritten documents also needed significant tuning.",
+          learned:
+            "End-to-end system design at scale, payment API integration, Azure Cognitive Services, and building multi-role access systems (landlord, tenant, maintenance).",
+          stack: [
+            "HTML",
+            "CSS",
+            "Bootstrap",
+            "ASP.NET MVC 5",
+            "C#",
+            "SQL Server",
+            "Entity Framework",
+            "Azure OCR",
+            "PayFast",
+            "MailKit SMTP",
+          ],
+        },
+        safedut: {
+          title: "SafeDUT – Smart Security Alert System",
+          problem:
+            "DUT's campus had no centralized digital system for students to report safety incidents or receive emergency alerts — responses were slow and situational awareness was low.",
+          role: "Lead Android developer. Built the full mobile UI, integrated Firebase Realtime Database for live incident feeds, Google Maps API for location-based reporting, and an NLP chatbot for guided incident submission.",
+          challenge:
+            "Achieving real-time location tracking with low battery drain while keeping Firebase listeners efficient for many concurrent users on a limited network environment.",
+          learned:
+            "Android development lifecycle, Firebase real-time data architecture, Google Maps integration, NLP chatbot design, and building safety-critical systems with reliability in mind.",
+          stack: [
+            "Android",
+            "Java",
+            "Kotlin",
+            "Firebase",
+            "Google Maps API",
+            "NLP Chatbot",
+          ],
+        },
+        northmed: {
+          title: "Northmed Clinic Inventory System",
+          problem:
+            "Manual stock tracking at the clinic caused medicine shortages and costly over-procurement. Pharmacists had no visibility into usage trends or automated reorder triggers.",
+          role: "Full-stack developer. Built the inventory management logic, Azure cloud integration for data sync, automated reorder threshold engine, and a reporting dashboard for procurement decisions.",
+          challenge:
+            "Designing a cost optimization algorithm that balanced safety stock levels against procurement budgets — required careful modelling of consumption patterns and supplier lead times.",
+          learned:
+            "Inventory management domain logic, Azure cloud integration, dashboard design for non-technical users, and data-driven decision systems.",
+          stack: ["HTML", "CSS", "JavaScript", "C#", "SQL Server", "Azure"],
+        },
+        bookbuffet: {
+          title: "The Book Buffet System",
+          problem:
+            "No existing platform let users both purchase books AND contribute their own eBooks or audiobooks — creators and consumers were served by completely separate tools.",
+          role: "Full-stack developer. Built the eCommerce engine, integrated Azure OCR for text extraction from uploaded documents, Azure TTS for automatic audiobook generation, and Facebook API for social sharing.",
+          challenge:
+            "The Azure Text-to-Speech pipeline for variable-length documents required chunking logic and async processing to avoid timeouts — getting this reliable was the core technical hurdle.",
+          learned:
+            "eCommerce system design, Azure AI service pipelines, accessibility-first feature development, social API integration, and handling asynchronous document processing.",
+          stack: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "C#",
+            "Azure OCR",
+            "Azure Text-to-Speech",
+            "SQL Database",
+            "Facebook API",
+          ],
+        },
+      };
+
+      function openModal(key) {
+        var cs = caseStudies[key];
+        if (!cs) return;
+        document.getElementById("modal-title").textContent = cs.title;
+        document.getElementById("modal-body").innerHTML =
+          '<div class="modal-section"><div class="modal-section-label">The Problem</div><p>' +
+          cs.problem +
+          "</p></div>" +
+          '<div class="modal-section"><div class="modal-section-label">My Role</div><p>' +
+          cs.role +
+          "</p></div>" +
+          '<div class="modal-section"><div class="modal-section-label">Key Challenge</div><p>' +
+          cs.challenge +
+          "</p></div>" +
+          '<div class="modal-section"><div class="modal-section-label">What I Learned</div><p>' +
+          cs.learned +
+          "</p></div>" +
+          '<div class="modal-section"><div class="modal-section-label">Tech Stack</div><div class="modal-tags">' +
+          cs.stack
+            .map(function (t) {
+              return '<span class="modal-tag">' + t + "</span>";
+            })
+            .join("") +
+          "</div></div>";
+        document.getElementById("project-modal").classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        document.getElementById("project-modal").classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      document
+        .getElementById("project-modal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeModal();
+        });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          if (
+            document.getElementById("project-modal").classList.contains("open")
+          )
+            closeModal();
+        }
+      });
     </script>
   </body>
 </html>
-
-
