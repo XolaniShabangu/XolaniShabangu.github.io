@@ -2353,6 +2353,38 @@
           </div>
         </div>
 
+        <!-- 5. Pig Game -->
+        <div
+          class="project-card card-animate"
+          data-category="web"
+          data-project="piggame"
+        >
+          <img src="img/piggame.png" alt="Pig Game Project Image" />
+          <div class="project-content">
+            <h3>Pig Game</h3>
+            <div class="tech-stack">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <p>
+              A two-player browser dice game built while learning JavaScript.
+              Roll the dice to accumulate points, but rolling a 1 forfeits your
+              turn. First to 30 wins. Demonstrates DOM manipulation, event
+              handling, and game state management.
+            </p>
+            <div class="project-actions">
+              <a
+                href="https://github.com/XolaniShabangu/pig-game"
+                target="_blank"
+                class="btn"
+                >View on GitHub</a
+              >
+              <button class="btn-outline" onclick="openModal('piggame')">
+                Case Study
+              </button>
+            </div>
+          </div>
+        </div>
+
         <!-- 4. Book Buffet -->
         <div
           class="project-card card-animate"
@@ -3007,6 +3039,8 @@
             "t-output",
             "      HTML \u00b7 CSS \u00b7 C# \u00b7 Azure OCR/TTS \u00b7 Facebook API",
           ],
+          ["t-info", "  [5] Pig Game"],
+          ["t-output", "      HTML \u00b7 CSS \u00b7 JavaScript"],
           ["t-output", ""],
         ],
         contact: () => [
@@ -3320,6 +3354,17 @@
           learned:
             "Inventory management domain logic, Azure cloud integration, dashboard design for non-technical users, and data-driven decision systems.",
           stack: ["HTML", "CSS", "JavaScript", "C#", "SQL Server", "Azure"],
+        },
+        piggame: {
+          title: "Pig Game",
+          problem:
+            "As part of learning JavaScript fundamentals, I needed a project that would exercise core concepts — DOM manipulation, event handling, and managing application state — in a fun and interactive way.",
+          role: "Solo developer. Built the full game from scratch including turn logic, dice roll simulation, score tracking, win detection, and game reset functionality.",
+          challenge:
+            "Managing shared game state cleanly across two players without a framework — keeping the active player, current scores, and win condition in sync with every DOM update.",
+          learned:
+            "JavaScript DOM manipulation, event-driven programming, game state management, and how to structure vanilla JS logic without leaning on any libraries or frameworks.",
+          stack: ["HTML", "CSS", "JavaScript"],
         },
         bookbuffet: {
           title: "The Book Buffet System",
