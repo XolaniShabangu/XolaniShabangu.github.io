@@ -188,9 +188,29 @@
       /* HERO */
 
       .hero {
-        padding: 160px 0 120px;
+        background: linear-gradient(
+          145deg,
+          #04091a 0%,
+          #080f25 45%,
+          #060e20 100%
+        ) !important;
+        padding: 130px 0 0;
         position: relative;
         overflow: hidden;
+        min-height: 680px;
+      }
+
+      /* subtle grid overlay for depth */
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(0, 119, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 119, 255, 0.04) 1px, transparent 1px);
+        background-size: 60px 60px;
+        pointer-events: none;
+        z-index: 0;
       }
 
       .worm-track {
@@ -200,25 +220,28 @@
       .hero-inner {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         gap: 80px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         max-width: 1700px;
-
-        padding-left: 200px;
+        padding: 0 100px;
+        position: relative;
+        z-index: 1;
       }
 
       .hero-text {
         max-width: 540px;
+        padding-bottom: 80px;
+        flex-shrink: 0;
       }
 
       .hero-badge {
         display: inline-flex;
         align-items: center;
         gap: 9px;
-        background: #f0f6ff;
-        color: #0077ff;
-        border: 1px solid #d0e8ff;
+        background: rgba(0, 119, 255, 0.12);
+        color: #60a5fa;
+        border: 1px solid rgba(0, 119, 255, 0.25);
         padding: 7px 16px;
         border-radius: 50px;
         font-size: 13px;
@@ -231,7 +254,7 @@
         content: "";
         width: 7px;
         height: 7px;
-        background: #0077ff;
+        background: #60a5fa;
         border-radius: 50%;
         flex-shrink: 0;
         animation: pulse-dot 1.6s ease-in-out infinite;
@@ -253,16 +276,17 @@
         font-size: 56px;
         margin-bottom: 18px;
         line-height: 1.15;
+        color: #ffffff;
       }
 
-      .hero-text span {
-        color: #0077ff;
+      .hero-text h1 span {
+        color: #3b82f6;
         font-size: 64px;
       }
 
       .hero-text p {
         font-size: 17px;
-        color: #555;
+        color: rgba(255, 255, 255, 0.65);
         margin-bottom: 18px;
         line-height: 1.85;
       }
@@ -284,14 +308,14 @@
         width: 44px;
         height: 44px;
         border-radius: 50%;
-        background: #f0f6ff;
-        color: #0077ff;
+        background: rgba(255, 255, 255, 0.07);
+        color: #93c5fd;
         display: flex;
         align-items: center;
         justify-content: center;
         text-decoration: none;
         font-size: 17px;
-        border: 1px solid #d0e8ff;
+        border: 1px solid rgba(255, 255, 255, 0.12);
         transition: 0.25s;
       }
 
@@ -299,73 +323,82 @@
         background: #0077ff;
         color: #fff;
         transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(0, 119, 255, 0.25);
+        box-shadow: 0 8px 20px rgba(0, 119, 255, 0.35);
       }
 
-      .hero img {
-        width: 400px;
-        border-radius: 20px;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-      }
-
-      /* Image wrapper with floating badges */
+      /* Image wrapper — portrait anchored to bottom */
       .hero-image-wrapper {
         position: relative;
         flex-shrink: 0;
+        align-self: flex-end;
       }
 
+      /* Blue glow behind the figure */
       .hero-image-wrapper::before {
         content: "";
         position: absolute;
-        width: 125%;
-        height: 125%;
-        top: -12%;
-        left: -12%;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        height: 75%;
         background: radial-gradient(
-          circle,
-          rgba(0, 119, 255, 0.07) 0%,
-          transparent 65%
+          ellipse at 50% 80%,
+          rgba(0, 119, 255, 0.18) 0%,
+          rgba(59, 130, 246, 0.08) 50%,
+          transparent 75%
         );
         border-radius: 50%;
         pointer-events: none;
         z-index: 0;
       }
 
+      /* Kill the spinning border — not suited for a full-body portrait */
       .hero-image-container {
         position: relative;
         z-index: 1;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        overflow: visible !important;
+        background: none !important;
+        display: block !important;
+      }
+
+      .hero-image-container::before,
+      .hero-image-container::after {
+        display: none !important;
       }
 
       .hero-float-badge {
         position: absolute;
-        background: #ffffff;
+        background: rgba(15, 30, 60, 0.85);
         border-radius: 50px;
         padding: 9px 18px;
         font-size: 13px;
         font-weight: 600;
-        color: #1c1c1c;
-        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+        color: #ffffff;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
         white-space: nowrap;
         z-index: 3;
-        border: 1px solid #eef0f5;
+        border: 1px solid rgba(0, 119, 255, 0.3);
       }
 
       .float-badge-1 {
-        top: -18px;
-        right: 30px;
+        top: 80px;
+        right: -10px;
         animation: fb1 3.2s ease-in-out infinite;
       }
 
       .float-badge-2 {
-        top: 50%;
-        right: -20px;
+        top: 42%;
+        right: -15px;
         transform: translateY(-50%);
         animation: fb2 3.8s ease-in-out infinite;
       }
 
       .float-badge-3 {
-        bottom: -18px;
-        left: 30px;
+        bottom: 120px;
+        left: -10px;
         animation: fb1 4.3s ease-in-out infinite;
       }
 
@@ -391,12 +424,18 @@
 
       @media (max-width: 700px) {
         .hero {
-          padding: 140px 0 80px;
+          padding: 120px 0 0;
+          min-height: unset;
         }
         .hero-inner {
           flex-direction: column;
+          align-items: center;
           text-align: center;
           padding: 0 30px;
+          flex-wrap: wrap;
+        }
+        .hero-text {
+          padding-bottom: 30px;
         }
         .hero-float-badge {
           display: none;
@@ -406,6 +445,9 @@
         }
         .hero-actions {
           justify-content: center;
+        }
+        .hero-image-container img {
+          height: 360px;
         }
       }
 
@@ -497,18 +539,16 @@
         z-index: 1;
       }
 
-      /* 4. The Image - Sits on the very top */
+      /* Portrait image — full body, bottom-anchored */
 
       .hero-image-container img {
         position: relative;
-
-        width: 400px;
-
-        border-radius: 20px;
-
-        z-index: 2; /* Keeps image above the rotating light */
-
+        height: 580px;
+        width: auto;
+        border-radius: 0;
+        z-index: 2;
         display: block;
+        filter: drop-shadow(-8px 0 40px rgba(59, 130, 246, 0.2));
       }
 
       /* 5. Rotation Animation */
@@ -535,8 +575,8 @@
 
       .parallax-strip {
         position: relative;
-
-        height: 50px; /* thin section */
+        padding: 0 !important;
+        height: 80px;
 
         background-image: url("img/grad.jpeg");
 
@@ -574,11 +614,13 @@
 
         color: #ffffff;
 
-        font-size: 22px;
+        font-size: 13px;
 
         font-weight: 500;
 
-        letter-spacing: 1px;
+        letter-spacing: 2px;
+
+        text-transform: uppercase;
 
         text-align: center;
       }
@@ -1282,7 +1324,9 @@
       /* ===== TYPEWRITER ===== */
       .typewriter-line {
         display: block;
-        font-size: 20px;
+        font-size: 26px;
+        white-space: nowrap;
+        overflow: hidden;
         color: #0077ff;
         font-weight: 500;
         margin-top: -10px;
@@ -2052,7 +2096,7 @@
 
         <div class="hero-image-wrapper">
           <div class="hero-image-container">
-            <img src="img/Profile.jpeg" alt="Xolani Shabangu Profile" />
+            <img src="img/hero-portrait.png" alt="Xolani Shabangu" />
           </div>
           <div class="hero-float-badge float-badge-1">⚡ .NET &amp; C#</div>
           <div class="hero-float-badge float-badge-2">📱 Android Dev</div>
