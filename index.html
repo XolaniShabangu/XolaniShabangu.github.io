@@ -2135,34 +2135,6 @@
       </div>
     </section>
 
-    <!-- <section id="education">
-
-      <h2>Education</h2>
-
-
-
-      <div class="education-timeline">
-
-        <div class="education-card">
-
-          <div class="education-year">2025</div>
-
-          <h3>Advanced Diploma in ICT (NQF7)</h3>
-
-          <p>Durban University of Technology</p>
-
-        </div>
-
-
-
-        <div class="education-card">
-          <div class="education-year">2024</div>
-          <h3>Diploma in ICT: Applications Development</h3>
-          <p>Durban University of Technology</p>
-        </div>
-      </div>
-    </section> -->
-
     <section id="education">
       <h2>Education</h2>
       <div class="education-timeline">
@@ -2379,6 +2351,70 @@
                 >View on GitHub</a
               >
               <button class="btn-outline" onclick="openModal('piggame')">
+                Case Study
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. CalcSHARP -->
+        <div
+          class="project-card card-animate"
+          data-category="web"
+          data-project="calcsharp"
+        >
+          <img src="img/calcSHARP.png" alt="CalcSHARP Project Image" />
+          <div class="project-content">
+            <h3>CalcSHARP</h3>
+            <div class="tech-stack">
+              <span>C#</span><span>HTML</span><span>CSS</span
+              ><span>JavaScript</span>
+            </div>
+            <p>
+              A feature-rich calculator with an integrated C# REPL and code
+              editor. Perform standard calculations or write and execute C# code
+              directly in the browser, blending math and programming in one
+              tool.
+            </p>
+            <div class="project-actions">
+              <a
+                href="https://github.com/XolaniShabangu/CalcSHARP"
+                class="btn"
+                target="_blank"
+                >View on GitHub</a
+              >
+              <button class="btn-outline" onclick="openModal('calcsharp')">
+                Case Study
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. WTHR OR NOT -->
+        <div
+          class="project-card card-animate"
+          data-category="web"
+          data-project="wthornot"
+        >
+          <img src="img/WTHR_OR_NOT.png" alt="WTHR OR NOT Project Image" />
+          <div class="project-content">
+            <h3>WTHR OR NOT</h3>
+            <div class="tech-stack">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <p>
+              A pixel-art weather app with live location search, a 7-day
+              forecast, and full-screen canvas animations that react to real
+              weather conditions — built with zero frameworks.
+            </p>
+            <div class="project-actions">
+              <a
+                href="https://github.com/XolaniShabangu/WTHR_OR_NOT"
+                class="btn"
+                target="_blank"
+                >View on GitHub</a
+              >
+              <button class="btn-outline" onclick="openModal('wthornot')">
                 Case Study
               </button>
             </div>
@@ -3041,6 +3077,13 @@
           ],
           ["t-info", "  [5] Pig Game"],
           ["t-output", "      HTML \u00b7 CSS \u00b7 JavaScript"],
+          ["t-info", "  [6] CalcSHARP"],
+          ["t-output", "      HTML \u00b7 CSS \u00b7 JavaScript \u00b7 C#"],
+          ["t-info", "  [7] WTHR OR NOT"],
+          [
+            "t-output",
+            "      HTML \u00b7 CSS \u00b7 JavaScript \u00b7 Open-Meteo API",
+          ],
           ["t-output", ""],
         ],
         contact: () => [
@@ -3354,6 +3397,28 @@
           learned:
             "Inventory management domain logic, Azure cloud integration, dashboard design for non-technical users, and data-driven decision systems.",
           stack: ["HTML", "CSS", "JavaScript", "C#", "SQL Server", "Azure"],
+        },
+        calcsharp: {
+          title: "CalcSHARP",
+          problem:
+            "I wanted to push my JavaScript skills further by building something more complex than a basic UI — a calculator that not only handles standard math but also embeds a live C# REPL and code editor directly in the browser.",
+          role: "Solo developer. Built the full calculator UI, implemented arithmetic logic, integrated a C# execution environment, and wired up the code editor with syntax highlighting and output display.",
+          challenge:
+            "Bridging JavaScript in the browser with a C# runtime required carefully managing async execution flow, sandboxing code input, and keeping the UI responsive while code was being evaluated.",
+          learned:
+            "Advanced DOM manipulation, async JavaScript patterns, event handling for a complex multi-mode UI, and how to integrate external runtimes — further solidifying core vanilla JS skills beyond simple interactions.",
+          stack: ["HTML", "CSS", "JavaScript", "C#"],
+        },
+        wthornot: {
+          title: "WTHR OR NOT",
+          problem:
+            "I wanted to keep building on my vanilla JS skills with a project that went beyond static UIs — something that consumed a real API, handled async data, and delivered a visually rich experience without any frameworks.",
+          role: "Solo developer. Built the full UI, location search with autocomplete, weather data fetching and parsing, unit conversion logic, and all canvas-based pixel-art animations reacting to live conditions.",
+          challenge:
+            "Designing canvas animations that respond dynamically to changing weather states while keeping the render loop smooth and the rest of the UI fully interactive at the same time.",
+          learned:
+            "Async fetch and API integration, JSON data parsing, Canvas 2D animation loops, CSS theming with variables, and how to manage complex application state cleanly in plain JavaScript.",
+          stack: ["HTML", "CSS", "JavaScript", "Open-Meteo API"],
         },
         piggame: {
           title: "Pig Game",
